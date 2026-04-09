@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   4. The layout is visually correct on mobile (320px), tablet (768px), and desktop (1280px) viewports
 **Plans:** 2 plans
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Astro project, install dependencies, define complete design token system
+- [x] 01-01-PLAN.md — Scaffold Astro project, install dependencies, define complete design token system
 - [ ] 01-02-PLAN.md — Build layout shell, Head/ThemeToggle components, tests, and visual verification
 **UI hint**: yes
 
