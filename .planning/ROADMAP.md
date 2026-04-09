@@ -32,7 +32,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans:** 2 plans
 Plans:
 - [x] 01-01-PLAN.md — Scaffold Astro project, install dependencies, define complete design token system
-- [ ] 01-02-PLAN.md — Build layout shell, Head/ThemeToggle components, tests, and visual verification
+- [x] 01-02-PLAN.md — Build layout shell, Head/ThemeToggle components, tests, and visual verification
 **UI hint**: yes
 
 ### Phase 2: Identity & Hero
