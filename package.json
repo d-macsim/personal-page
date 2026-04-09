@@ -1,0 +1,30 @@
+{
+  "name": "var-folders-yp-grj2-vqj5bx77y46r5yt94l80000gn-t-tmp-lf7ghlnve0-astro-scaffold",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^5.0.3",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/react-dom": "^19.2.3",
+    "astro": "^6.1.5",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "vitest": "^4.1.4"
+  }
+}
