@@ -47,8 +47,8 @@ Plans:
   5. The page HTML has a logical heading hierarchy (h1 → h2 → h3) and a populated meta description tag
 **Plans:** 2 plans
 Plans:
-- [ ] 02-01-PLAN.md — Install Motion v12, create animated HeroSection React island with staggered entrance and glow pulse
-- [ ] 02-02-PLAN.md — Build About section components, extend Head.astro with OG/JSON-LD metadata, visual verification
+- [x] 02-01-PLAN.md — Install Motion v12, create animated HeroSection React island with staggered entrance and glow pulse
+- [x] 02-02-PLAN.md — Build About section components, extend Head.astro with OG/JSON-LD metadata, visual verification
 **UI hint**: yes
 
 ### Phase 3: CV & Experience
@@ -60,7 +60,10 @@ Plans:
   2. An education section shows both degrees with institution, dates, and relevant details (classification, key modules)
   3. Skills are displayed as categorised lists — no percentage bars anywhere on the page
   4. Clicking the CV download link downloads a file named "Dragos Macsim CV 2026.pdf" directly to the user's device
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 03-01-PLAN.md — CV data file and experience/education timeline component with page integration
+- [ ] 03-02-PLAN.md — Skills grid, download button, complete CVSection, and static analysis tests
 **UI hint**: yes
 
 ### Phase 4: Projects & Contact
@@ -96,6 +99,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/2 | Planning complete | - |
 | 2. Identity & Hero | 0/2 | Planning complete | - |
-| 3. CV & Experience | 0/TBD | Not started | - |
+| 3. CV & Experience | 0/2 | Planning complete | - |
 | 4. Projects & Contact | 0/TBD | Not started | - |
 | 5. Animations & Deploy | 0/TBD | Not started | - |
