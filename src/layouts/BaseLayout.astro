@@ -17,8 +17,8 @@ const { title, description } = Astro.props;
   <head>
     <Head title={title} description={description} />
   </head>
-  <body class="bg-base text-text min-h-dvh">
-    <nav class="fixed top-0 right-0 left-0 z-50 bg-base/80 backdrop-blur-sm border-b border-border">
+  <body class="bg-base text-text min-h-dvh transition-colors duration-300 ease-in-out">
+    <nav class="fixed top-0 right-0 left-0 z-50 bg-base/80 backdrop-blur-sm border-b border-border transition-colors duration-300 ease-in-out">
       <div class="max-w-[1100px] mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-end h-14">
         <ThemeToggle />
       </div>
