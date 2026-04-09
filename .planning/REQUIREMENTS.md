@@ -20,8 +20,8 @@
 
 - [x] **EXP-01**: Experience timeline showing roles, companies, dates, and key achievements
 - [x] **EXP-02**: Education section with degrees, institutions, and relevant details
-- [ ] **EXP-03**: Skills displayed as categorized lists (no percentage bars)
-- [ ] **EXP-04**: Downloadable CV as PDF with candidate-named filename
+- [x] **EXP-03**: Skills displayed as categorized lists (no percentage bars)
+- [x] **EXP-04**: Downloadable CV as PDF with candidate-named filename
 
 ### Project Showcase
 
@@ -93,8 +93,8 @@
 | SEO-02 | Phase 2 | Pending |
 | EXP-01 | Phase 3 | Complete |
 | EXP-02 | Phase 3 | Complete |
-| EXP-03 | Phase 3 | Pending |
-| EXP-04 | Phase 3 | Pending |
+| EXP-03 | Phase 3 | Complete |
+| EXP-04 | Phase 3 | Complete |
 | PROJ-01 | Phase 4 | Pending |
 | PROJ-02 | Phase 4 | Pending |
 | CONT-01 | Phase 4 | Pending |

@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Foundation** - Astro project scaffold and bespoke design system (palette, typography, dark mode)
 - [ ] **Phase 2: Identity & Hero** - Narrative framing, hero section, about section, and SEO metadata
-- [ ] **Phase 3: CV & Experience** - Experience timeline, education, skills, and downloadable PDF
+- [x] **Phase 3: CV & Experience** - Experience timeline, education, skills, and downloadable PDF (completed 2026-04-09)
 - [ ] **Phase 4: Projects & Contact** - mytai showcase card and contact section with persistent nav
 - [ ] **Phase 5: Animations & Deploy** - Scroll-reveal animations and production deployment on custom domain
 
@@ -60,10 +60,10 @@ Plans:
   2. An education section shows both degrees with institution, dates, and relevant details (classification, key modules)
   3. Skills are displayed as categorised lists — no percentage bars anywhere on the page
   4. Clicking the CV download link downloads a file named "Dragos Macsim CV 2026.pdf" directly to the user's device
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [x] 03-01-PLAN.md — CV data file and experience/education timeline component with page integration
-- [ ] 03-02-PLAN.md — Skills grid, download button, complete CVSection, and static analysis tests
+- [x] 03-02-PLAN.md — Skills grid, download button, complete CVSection, and static analysis tests
 **UI hint**: yes
 
 ### Phase 4: Projects & Contact
@@ -99,6 +99,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/2 | Planning complete | - |
 | 2. Identity & Hero | 0/2 | Planning complete | - |
-| 3. CV & Experience | 1/2 | In Progress|  |
+| 3. CV & Experience | 2/2 | Complete   | 2026-04-09 |
 | 4. Projects & Contact | 0/TBD | Not started | - |
 | 5. Animations & Deploy | 0/TBD | Not started | - |
