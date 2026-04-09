@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 3 context gathered
-last_updated: "2026-04-09T22:16:19.472Z"
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-04-09T22:44:04.239Z"
 last_activity: 2026-04-09
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
-  percent: 100
+  total_plans: 6
+  completed_plans: 5
+  percent: 83
 ---
 
 # Project State
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-09)
 
 **Core value:** Visitors instantly understand who Dragos is — an AI specialist who builds products — and can explore his work and download his CV.
-**Current focus:** Phase 02 — identity-hero
+**Current focus:** Phase 03 — CV & Experience
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
-Status: Executing Phase 02 - Plan 01 complete
+Phase: 03 (CV & Experience) — EXECUTING
+Plan: 2 of 2
+Status: Ready to execute
 Last activity: 2026-04-09
 
 Progress: [#####░░░░░] 50%
@@ -56,6 +56,7 @@ Progress: [#####░░░░░] 50%
 | Phase 01 P01 | 3min | 2 tasks | 9 files |
 | Phase 01 P02 | 2min | 2 tasks | 6 files |
 | Phase 02 P01 | 1min | 2 tasks | 6 files |
+| Phase 03 P01 | 65s | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -78,6 +79,8 @@ Recent decisions affecting current work:
 - [Phase 02]: Motion v12 imported from motion/react (not framer-motion) per rebrand
 - [Phase 02]: Glow pulse uses CSS keyframes (not Motion) for non-interactive continuous animation
 - [Phase 02]: React island with client:load for above-fold animated hero content
+- [Phase 03]: Typed CV data in src/data/cv.ts with readonly arrays and as const satisfies for immutability
+- [Phase 03]: CVSection is a shell in Plan 01; SkillsGrid and CVDownloadButton added in Plan 02
 
 ### Pending Todos
 
@@ -89,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-09T22:16:19.469Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-cv-experience/03-CONTEXT.md
+Last session: 2026-04-09T22:44:04.236Z
+Stopped at: Completed 03-01-PLAN.md
+Resume file: None

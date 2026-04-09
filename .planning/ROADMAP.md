@@ -60,9 +60,9 @@ Plans:
   2. An education section shows both degrees with institution, dates, and relevant details (classification, key modules)
   3. Skills are displayed as categorised lists — no percentage bars anywhere on the page
   4. Clicking the CV download link downloads a file named "Dragos Macsim CV 2026.pdf" directly to the user's device
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 Plans:
-- [ ] 03-01-PLAN.md — CV data file and experience/education timeline component with page integration
+- [x] 03-01-PLAN.md — CV data file and experience/education timeline component with page integration
 - [ ] 03-02-PLAN.md — Skills grid, download button, complete CVSection, and static analysis tests
 **UI hint**: yes
 
@@ -99,6 +99,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/2 | Planning complete | - |
 | 2. Identity & Hero | 0/2 | Planning complete | - |
-| 3. CV & Experience | 0/2 | Planning complete | - |
+| 3. CV & Experience | 1/2 | In Progress|  |
 | 4. Projects & Contact | 0/TBD | Not started | - |
 | 5. Animations & Deploy | 0/TBD | Not started | - |

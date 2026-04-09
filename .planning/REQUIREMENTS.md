@@ -18,8 +18,8 @@
 
 ### Experience
 
-- [ ] **EXP-01**: Experience timeline showing roles, companies, dates, and key achievements
-- [ ] **EXP-02**: Education section with degrees, institutions, and relevant details
+- [x] **EXP-01**: Experience timeline showing roles, companies, dates, and key achievements
+- [x] **EXP-02**: Education section with degrees, institutions, and relevant details
 - [ ] **EXP-03**: Skills displayed as categorized lists (no percentage bars)
 - [ ] **EXP-04**: Downloadable CV as PDF with candidate-named filename
 
@@ -91,8 +91,8 @@
 | ABOUT-02 | Phase 2 | Pending |
 | SEO-01 | Phase 2 | Pending |
 | SEO-02 | Phase 2 | Pending |
-| EXP-01 | Phase 3 | Pending |
-| EXP-02 | Phase 3 | Pending |
+| EXP-01 | Phase 3 | Complete |
+| EXP-02 | Phase 3 | Complete |
 | EXP-03 | Phase 3 | Pending |
 | EXP-04 | Phase 3 | Pending |
 | PROJ-01 | Phase 4 | Pending |
