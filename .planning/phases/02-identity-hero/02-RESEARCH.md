@@ -461,22 +461,22 @@ Note: `Astro.site` requires `site` property set in `astro.config.mjs`. If not se
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Dragos's social profile URLs for JSON-LD sameAs**
    - What we know: PROJECT.md mentions LinkedIn and GitHub as contact surfaces but does not list URLs
    - What's unclear: Exact LinkedIn/GitHub profile slugs
-   - Recommendation: Planner should add a task to confirm URLs and add them as constants in a `src/data/profile.ts` file
+   - RESOLVED: Placeholder URLs used in Plan 02 Task 2 based on common slug patterns. To be confirmed with Dragos before Phase 5 deployment. This is under "Claude's Discretion" per CONTEXT.md.
 
 2. **`site` property in astro.config.mjs**
    - What we know: `astro.config.mjs` currently has no `site` property set
    - What's unclear: The final production domain to use
-   - Recommendation: Add `site: "https://placeholder.com"` for development; update at Phase 5 deployment. OG absolute URL construction depends on this.
+   - RESOLVED: Plan 02 Task 2 Step 1 adds `site: "https://dragosmacsim.com"` to astro.config.mjs. Can be updated at deployment time.
 
 3. **OG image creation**
    - What we know: UI-SPEC specifies design: dark bg, centered name, indigo glow, 1200×630px
    - What's unclear: Whether the user wants to create this manually or if a code-generated placeholder is acceptable
-   - Recommendation: Create a minimal code-generated placeholder (a simple dark PNG with text) using a one-time Node script, or use Figma to export the spec. Either works for Phase 2.
+   - RESOLVED: Static PNG to be created manually or via code-generated placeholder. Plan proceeds with OG meta tags pointing to `/og-image.png`; LinkedIn preview degrades gracefully to text-only until image is created. Manual verification in VALIDATION.md covers this.
 
 ---
 

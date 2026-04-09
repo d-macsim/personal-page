@@ -43,8 +43,8 @@ created: 2026-04-09
 | 02-01-03 | 01 | 1 | HERO-03 | — | N/A | unit | `npx vitest run tests/hero-section.test.ts` | ❌ W0 | ⬜ pending |
 | 02-02-01 | 02 | 1 | ABOUT-01 | — | N/A | unit | `npx vitest run tests/about-section.test.ts` | ❌ W0 | ⬜ pending |
 | 02-02-02 | 02 | 1 | ABOUT-02 | — | N/A | unit | `npx vitest run tests/about-section.test.ts` | ❌ W0 | ⬜ pending |
-| 02-03-01 | 03 | 1 | SEO-01 | — | N/A | unit | `npx vitest run tests/seo-metadata.test.ts` | ❌ W0 | ⬜ pending |
-| 02-03-02 | 03 | 1 | SEO-02 | — | N/A | unit | `npx vitest run tests/seo-metadata.test.ts` | ❌ W0 | ⬜ pending |
+| 02-02-03 | 02 | 2 | SEO-01 | — | N/A | unit | `npx vitest run tests/seo-metadata.test.ts` | ❌ W0 | ⬜ pending |
+| 02-02-04 | 02 | 2 | SEO-02 | — | N/A | unit | `npx vitest run tests/seo-metadata.test.ts` | ❌ W0 | ⬜ pending |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
