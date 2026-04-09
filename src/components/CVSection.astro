@@ -1,0 +1,17 @@
+---
+import ExperienceTimeline from "./ExperienceTimeline.astro";
+import { roles, education } from "../data/cv";
+---
+
+<section id="experience" aria-label="Experience and CV" class="py-16 md:py-24">
+  <h2
+    class="font-semibold mb-12"
+    style={{ fontSize: "var(--font-size-heading)" }}
+  >
+    Experience
+  </h2>
+
+  <div class="max-w-2xl">
+    <ExperienceTimeline roles={roles} education={education} />
+  </div>
+</section>
