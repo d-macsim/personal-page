@@ -45,7 +45,10 @@ Plans:
   3. The about section contains a professional bio, current role highlight, and education highlight visible without scrolling past it
   4. Pasting the site URL into LinkedIn's post composer surfaces the correct Open Graph title, description, and image
   5. The page HTML has a logical heading hierarchy (h1 → h2 → h3) and a populated meta description tag
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 02-01-PLAN.md — Install Motion v12, create animated HeroSection React island with staggered entrance and glow pulse
+- [ ] 02-02-PLAN.md — Build About section components, extend Head.astro with OG/JSON-LD metadata, visual verification
 **UI hint**: yes
 
 ### Phase 3: CV & Experience
@@ -92,7 +95,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 0/2 | Planning complete | - |
-| 2. Identity & Hero | 0/TBD | Not started | - |
+| 2. Identity & Hero | 0/2 | Planning complete | - |
 | 3. CV & Experience | 0/TBD | Not started | - |
 | 4. Projects & Contact | 0/TBD | Not started | - |
 | 5. Animations & Deploy | 0/TBD | Not started | - |
