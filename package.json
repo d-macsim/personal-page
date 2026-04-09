@@ -22,6 +22,7 @@
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "@types/react": "^19.2.14",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
