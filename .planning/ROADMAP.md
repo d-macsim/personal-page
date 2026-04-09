@@ -29,7 +29,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. The design system defines custom tokens (colour, spacing, typography) that are applied site-wide via Tailwind CSS v4 theme configuration
   3. A dark mode toggle exists in the UI and switching it changes the site appearance immediately without a page reload
   4. The layout is visually correct on mobile (320px), tablet (768px), and desktop (1280px) viewports
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 01-01-PLAN.md — Scaffold Astro project, install dependencies, define complete design token system
+- [ ] 01-02-PLAN.md — Build layout shell, Head/ThemeToggle components, tests, and visual verification
 **UI hint**: yes
 
 ### Phase 2: Identity & Hero
@@ -88,7 +91,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/2 | Planning complete | - |
 | 2. Identity & Hero | 0/TBD | Not started | - |
 | 3. CV & Experience | 0/TBD | Not started | - |
 | 4. Projects & Contact | 0/TBD | Not started | - |
