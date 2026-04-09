@@ -5,6 +5,7 @@ status: draft
 shadcn_initialized: false
 preset: none
 created: 2026-04-09
+revised: 2026-04-09
 ---
 
 # Phase 1 — UI Design Contract
@@ -70,23 +71,31 @@ Mobile-first approach: base styles target 320px minimum, scale up with `sm:`, `m
 
 Inter Variable loaded at weights 400, 600, 700. No other font family. Differentiation via size and weight only.
 
+Exactly 4 semantic tiers declared. Responsive body text is expressed as a single `clamp()` value covering both mobile (16px) and desktop (18px) — one token, one row. H2 and H3 are merged into a single Heading tier using a `clamp()` range that spans both former levels — the executor uses this token for all section-level headings without needing to distinguish H2 from H3 by size.
+
 | Role | Size | Weight | Line Height | Notes |
 |------|------|--------|-------------|-------|
-| Body (desktop) | 18px (1.125rem) | 400 | 1.7 | Max prose width 680px |
-| Body (mobile) | 16px (1rem) | 400 | 1.6 | Applied via `@media (max-width: 40rem)` |
 | Label / UI text | 14px (0.875rem) | 600 | 1.4 | Nav links, badges, captions |
-| H3 | clamp(1.25rem, 2vw, 1.75rem) — approx 20px–28px | 600 | 1.2 | Section subheadings |
-| H2 | clamp(1.75rem, 3vw, 2.5rem) — approx 28px–40px | 700 | 1.2 | Section headings |
-| H1 / Display | clamp(2.5rem, 5vw, 4rem) — approx 40px–64px | 700 | 1.1 | Hero display — single H1 per page |
+| Body | `clamp(1rem, 2vw, 1.125rem)` — 16px → 18px | 400 | 1.7 (desktop) / 1.6 (mobile) | Max prose width 680px. Line-height adjusts with `@media (max-width: 40rem): line-height: 1.6` |
+| Heading | `clamp(1.25rem, 3vw, 2.5rem)` — approx 20px → 40px | 600 | 1.2 | Section headings and subheadings (H2 and H3). Executor may use lighter end of range for H3 and upper end for H2, but both draw from this single token |
+| Display | `clamp(2.5rem, 5vw, 4rem)` — approx 40px → 64px | 700 | 1.1 | Hero display — single H1 per page |
 
-Declared sizes: 14px, 16px, 18px, 28px, 40px, 64px (clamped range — 4 semantic tiers: label, body, heading, display).
+Declared sizes: 4 tiers (label 14px, body clamp 16–18px, heading clamp 20–40px, display clamp 40–64px).
 Declared weights: 400 (regular) + 600 (semibold) + 700 (bold) — three weights, justified by editorial hierarchy requirement (CONTEXT.md D-12).
 
-**Source:** CONTEXT.md D-11, D-12, D-13. RESEARCH.md Pattern 1 font-size tokens. Heading clamp values from RESEARCH.md verified CSS example.
+**Source:** CONTEXT.md D-11, D-12, D-13. RESEARCH.md Pattern 1 font-size tokens. Heading clamp values derived from RESEARCH.md verified CSS example, consolidated from prior H2/H3 split.
 
 ---
 
 ## Color
+
+### 60/30/10 Allocation
+
+| Tier | Percentage | Elements |
+|------|------------|---------|
+| Dominant | 60% | Page background (`--color-base`), section backgrounds, prose areas |
+| Secondary | 30% | Card surfaces, nav background, sidebar areas (`--color-surface`), borders and dividers (`--color-border`) |
+| Accent | 10% | Interactive elements only: nav links (active/current state), focus rings, inline hyperlinks, CTAs, skill badges, decorative highlight marks on key phrases. See Accent Reserved-For List below. |
 
 ### Dark Mode (default)
 
@@ -132,6 +141,23 @@ Accent secondary (#f59e0b dark / #d97706 light) is reserved for:
 Accent colors are NOT used on: body text, backgrounds, borders, or decorative dividers.
 
 **Source:** CONTEXT.md D-01, D-02, D-03, D-08. RESEARCH.md Pattern 1 verified CSS token values.
+
+---
+
+## Hero Visual Anchor
+
+The hero section's primary visual anchor is a centered radial gradient glow in indigo (`#6366f1` at 15–20% opacity in dark mode, 8–10% opacity in light mode) positioned behind the H1 and tagline text. This is the single most prominent decorative element on the page — everything else defers to it visually.
+
+| Property | Value |
+|----------|-------|
+| Primary anchor | Indigo radial gradient glow behind hero H1 |
+| Implementation | CSS `radial-gradient` as a pseudo-element or background layer on the hero `<section>` |
+| Hierarchy | Hero glow is the dominant visual; all other decorative glows (accent element glows) are subordinate |
+| Content over glow | Name (`<h1>`) and role tagline are the foreground; the glow is background-layer only, never competing with text contrast |
+
+The hero has no image, no illustration, and no video. Typography and gradient glow are the sole visual elements. This is intentional: Linear/Vercel aesthetic reference (CONTEXT.md D-01) prioritises type-first design.
+
+**Source:** CONTEXT.md D-01, D-05. Executor visual anchor declared to prevent guessing.
 
 ---
 
@@ -228,6 +254,16 @@ Use `@fontsource-variable/inter`. Import in `src/styles/global.css`:
 @import "@fontsource-variable/inter";
 ```
 Font stack: `"Inter Variable", ui-sans-serif, system-ui, sans-serif`.
+
+### Typography Token Implementation
+Responsive body text is a single CSS custom property using `clamp()`. The executor must not split body text into two separate tokens:
+```css
+--font-size-body: clamp(1rem, 2vw, 1.125rem);
+--font-size-label: 0.875rem;
+--font-size-heading: clamp(1.25rem, 3vw, 2.5rem);
+--font-size-display: clamp(2.5rem, 5vw, 4rem);
+```
+Line-height for body adjusts at the mobile breakpoint via media query, not a separate token.
 
 ### Dark Mode Class Strategy
 Use `.dark` class on `<html>` (not `data-theme` attribute). Tailwind v4 `@custom-variant`:
