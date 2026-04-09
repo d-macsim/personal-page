@@ -81,32 +81,32 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HERO-01 | Pending | Pending |
-| HERO-02 | Pending | Pending |
-| HERO-03 | Pending | Pending |
-| ABOUT-01 | Pending | Pending |
-| ABOUT-02 | Pending | Pending |
-| EXP-01 | Pending | Pending |
-| EXP-02 | Pending | Pending |
-| EXP-03 | Pending | Pending |
-| EXP-04 | Pending | Pending |
-| PROJ-01 | Pending | Pending |
-| PROJ-02 | Pending | Pending |
-| CONT-01 | Pending | Pending |
-| CONT-02 | Pending | Pending |
-| DSGN-01 | Pending | Pending |
-| DSGN-02 | Pending | Pending |
-| DSGN-03 | Pending | Pending |
-| DSGN-04 | Pending | Pending |
-| SEO-01 | Pending | Pending |
-| SEO-02 | Pending | Pending |
-| DEPLOY-01 | Pending | Pending |
+| DSGN-01 | Phase 1 | Pending |
+| DSGN-02 | Phase 1 | Pending |
+| DSGN-03 | Phase 1 | Pending |
+| HERO-01 | Phase 2 | Pending |
+| HERO-02 | Phase 2 | Pending |
+| HERO-03 | Phase 2 | Pending |
+| ABOUT-01 | Phase 2 | Pending |
+| ABOUT-02 | Phase 2 | Pending |
+| SEO-01 | Phase 2 | Pending |
+| SEO-02 | Phase 2 | Pending |
+| EXP-01 | Phase 3 | Pending |
+| EXP-02 | Phase 3 | Pending |
+| EXP-03 | Phase 3 | Pending |
+| EXP-04 | Phase 3 | Pending |
+| PROJ-01 | Phase 4 | Pending |
+| PROJ-02 | Phase 4 | Pending |
+| CONT-01 | Phase 4 | Pending |
+| CONT-02 | Phase 4 | Pending |
+| DSGN-04 | Phase 5 | Pending |
+| DEPLOY-01 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 20 total
-- Mapped to phases: 0
-- Unmapped: 20 ⚠️
+- Mapped to phases: 20
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-09*
-*Last updated: 2026-04-09 after initial definition*
+*Last updated: 2026-04-09 after roadmap creation*
