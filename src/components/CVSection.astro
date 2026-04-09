@@ -1,6 +1,8 @@
 ---
 import ExperienceTimeline from "./ExperienceTimeline.astro";
-import { roles, education } from "../data/cv";
+import SkillsGrid from "./SkillsGrid.astro";
+import CVDownloadButton from "./CVDownloadButton.astro";
+import { roles, education, skillCategories } from "../data/cv";
 ---
 
 <section id="experience" aria-label="Experience and CV" class="py-16 md:py-24">
@@ -13,5 +15,19 @@ import { roles, education } from "../data/cv";
 
   <div class="max-w-2xl">
     <ExperienceTimeline roles={roles} education={education} />
+  </div>
+
+  <div class="max-w-2xl mt-16">
+    <h2
+      class="font-semibold mb-8"
+      style={{ fontSize: "var(--font-size-heading)" }}
+    >
+      Skills
+    </h2>
+    <SkillsGrid categories={skillCategories} />
+  </div>
+
+  <div class="mt-12">
+    <CVDownloadButton />
   </div>
 </section>
