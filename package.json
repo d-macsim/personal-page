@@ -1,5 +1,5 @@
 {
-  "name": "var-folders-yp-grj2-vqj5bx77y46r5yt94l80000gn-t-tmp-lf7ghlnve0-astro-scaffold",
+  "name": "dragos-personal-page",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.3",
