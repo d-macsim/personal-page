@@ -1,1 +1,112 @@
+/* src/styles/global.css — Phase 1 Design System */
+/* All tokens defined here. No tailwind.config.js. */
+
+@import "@fontsource-variable/inter";
 @import "tailwindcss";
+
+/* ─── Dark mode variant: toggle .dark class on <html> ─── */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── Design Tokens ─── */
+@theme {
+  /* Clear default Tailwind colors — bespoke palette only */
+  --color-*: initial;
+
+  /* Typography — per D-11, D-12 */
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* Spacing — 4px base unit, all utilities scale from this */
+  --spacing: 0.25rem;
+
+  /* Breakpoints — per UI-SPEC */
+  --breakpoint-sm: 40rem;   /* 640px  — mobile landscape */
+  --breakpoint-md: 48rem;   /* 768px  — tablet */
+  --breakpoint-lg: 80rem;   /* 1280px — desktop */
+
+  /* ─── Color Palette — Dark Mode (default) ─── */
+  /* Per D-01: dark & premium aesthetic */
+  --color-base: #0a0a0f;
+  --color-surface: #111118;
+  --color-border: #27272a;
+  --color-text: #e4e4e7;
+  --color-text-muted: #71717a;
+
+  /* Per D-02: indigo/violet primary accent */
+  --color-accent-primary: #6366f1;
+  --color-accent-primary-hover: #818cf8;
+  --color-accent-primary-press: #4f46e5;
+
+  /* Per D-03: amber secondary accent */
+  --color-accent-secondary: #f59e0b;
+
+  /* ─── Typography Scale — per D-13, UI-SPEC ─── */
+  --font-size-label: 0.875rem;
+  --font-size-body: clamp(1rem, 2vw, 1.125rem);
+  --font-size-heading: clamp(1.25rem, 3vw, 2.5rem);
+  --font-size-display: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* ─── Light Mode Overrides — per D-08 ─── */
+.light {
+  --color-base: #fafafa;
+  --color-surface: #ffffff;
+  --color-border: #e4e4e7;
+  --color-text: #18181b;
+  --color-text-muted: #71717a;
+
+  /* Accent colors darkened for contrast — per D-08 */
+  --color-accent-primary: #4f46e5;
+  --color-accent-primary-hover: #6366f1;
+  --color-accent-primary-press: #3730a3;
+
+  --color-accent-secondary: #d97706;
+}
+
+/* ─── Base Styles ─── */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-base);
+    color: var(--color-text);
+    /* Per D-09: 300ms ease transition on theme switch */
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  body {
+    font-size: var(--font-size-body);
+    line-height: 1.7;
+    margin: 0;
+    min-height: 100dvh;
+  }
+
+  /* Per D-13: mobile line-height adjustment */
+  @media (max-width: 40rem) {
+    body {
+      line-height: 1.6;
+    }
+  }
+
+  /* Prose max-width — per D-13 */
+  .prose {
+    max-width: 42.5rem; /* 680px */
+  }
+
+  /* Heading defaults */
+  h1 {
+    font-size: var(--font-size-display);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: var(--font-size-heading);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: var(--font-size-heading);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
