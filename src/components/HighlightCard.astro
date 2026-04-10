@@ -1,0 +1,47 @@
+---
+interface Props {
+  label: string;
+  value: string;
+  detail?: string;
+}
+
+const { label, value, detail } = Astro.props;
+---
+
+<div
+  class="rounded-lg p-6 transition-colors duration-300"
+  style={{
+    backgroundColor: "var(--color-surface)",
+    border: "1px solid var(--color-border)",
+  }}
+>
+  <h3
+    class="font-semibold uppercase tracking-wide"
+    style={{
+      fontSize: "var(--font-size-label)",
+      color: "var(--color-text-muted)",
+    }}
+  >
+    {label}
+  </h3>
+  <p
+    class="mt-1 font-semibold"
+    style={{
+      fontSize: "var(--font-size-body)",
+      color: "var(--color-text)",
+    }}
+  >
+    {value}
+  </p>
+  {detail && (
+    <p
+      class="mt-1"
+      style={{
+        fontSize: "var(--font-size-label)",
+        color: "var(--color-text-muted)",
+      }}
+    >
+      {detail}
+    </p>
+  )}
+</div>
