@@ -99,7 +99,7 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -108,3 +108,19 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 3. CV & Experience | 2/2 | Complete   | 2026-04-09 |
 | 4. Projects & Contact | 2/2 | Complete   | 2026-04-10 |
 | 5. Animations & Deploy | 2/2 | Complete   | 2026-04-10 |
+| 6. Layout Polish | 0/1 | Planning complete | - |
+
+### Phase 6: Layout polish — side-by-side experience and education, timeline dot and bar alignment fixes
+
+**Goal:** Experience and Education display in a two-column side-by-side layout on desktop with corrected timeline dot-spine alignment
+**Requirements**: LAYOUT-01, LAYOUT-02, LAYOUT-03
+**Depends on:** Phase 5
+**Success Criteria** (what must be TRUE):
+  1. Experience and Education render side-by-side in two equal columns on viewports >= 768px
+  2. Timeline dots are visually centered on the spine bar (both positioned at left-4 = 16px)
+  3. Mobile layout stacks columns vertically with no regression from current behaviour
+  4. Each column has its own independent spine bar, dot markers, and stagger animation
+**Plans:** 1 plan
+
+Plans:
+- [ ] 06-01-PLAN.md — Create TimelineColumn.astro, refactor CVSection to two-column grid, fix dot alignment, update tests
