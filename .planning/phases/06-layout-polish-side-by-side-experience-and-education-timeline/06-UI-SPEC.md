@@ -67,7 +67,8 @@ All values sourced directly from `src/styles/global.css` — no new type definit
 | Body | clamp(1rem, 2vw, 1.125rem) — approx 16–18px | 400 (normal) | 1.7 desktop / 1.6 mobile |
 | Label | 0.875rem (14px) | 600 (semibold) | 1.4 (tight, uppercase tracking-widest) |
 | Heading (h3 column) | clamp(1.25rem, 3vw, 2.5rem) — approx 20–40px | 600 (semibold) | 1.2 |
-| Display (h1 hero) | clamp(2.5rem, 5vw, 4rem) | 700 | 1.1 |
+
+Active weights: 400 (normal) and 600 (semibold) only.
 
 **Phase-specific heading hierarchy decision:**
 - Section anchor heading stays `<h2>` — content: "Experience & Education" (renamed from "Experience" to accurately label both columns after the split)
@@ -81,6 +82,8 @@ Source: `src/styles/global.css` h2/h3 base styles; RESEARCH.md heading hierarchy
 ## Color
 
 All values sourced from `src/styles/global.css` @theme block (dark mode default) and `.light` override block.
+
+**Primary focal point:** accent-colored timeline dots in each column.
 
 | Role | Dark mode value | Light mode value | Usage |
 |------|----------------|-----------------|-------|
