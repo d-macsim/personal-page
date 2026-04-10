@@ -25,12 +25,12 @@
 
 ### Project Showcase
 
-- [ ] **PROJ-01**: mytai card with description, tech stack summary, and link to mytai.uk
-- [ ] **PROJ-02**: Structure allows adding more project cards in the future
+- [x] **PROJ-01**: mytai card with description, tech stack summary, and link to mytai.uk
+- [x] **PROJ-02**: Structure allows adding more project cards in the future
 
 ### Contact
 
-- [ ] **CONT-01**: Contact section with email, LinkedIn, and GitHub links
+- [x] **CONT-01**: Contact section with email, LinkedIn, and GitHub links
 - [ ] **CONT-02**: Contact reachable from any section (persistent nav or CTA)
 
 ### Design System
@@ -95,9 +95,9 @@
 | EXP-02 | Phase 3 | Complete |
 | EXP-03 | Phase 3 | Complete |
 | EXP-04 | Phase 3 | Complete |
-| PROJ-01 | Phase 4 | Pending |
-| PROJ-02 | Phase 4 | Pending |
-| CONT-01 | Phase 4 | Pending |
+| PROJ-01 | Phase 4 | Complete |
+| PROJ-02 | Phase 4 | Complete |
+| CONT-01 | Phase 4 | Complete |
 | CONT-02 | Phase 4 | Pending |
 | DSGN-04 | Phase 5 | Pending |
 | DEPLOY-01 | Phase 5 | Pending |

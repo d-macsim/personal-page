@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Phase 4 UI-SPEC approved
-last_updated: "2026-04-10T09:21:38.303Z"
-last_activity: 2026-04-10 -- Phase 4 planning complete
+stopped_at: Completed 04-projects-contact-01-PLAN.md
+last_updated: "2026-04-10T09:26:49.453Z"
+last_activity: 2026-04-10
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 8
-  completed_plans: 6
-  percent: 75
+  completed_plans: 7
+  percent: 88
 ---
 
 # Project State
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-09)
 
 **Core value:** Visitors instantly understand who Dragos is — an AI specialist who builds products — and can explore his work and download his CV.
-**Current focus:** Phase 03 — CV & Experience
+**Current focus:** Phase 04 — projects-contact
 
 ## Current Position
 
-Phase: 4
-Plan: Not started
+Phase: 04 (projects-contact) — EXECUTING
+Plan: 2 of 2
 Status: Ready to execute
-Last activity: 2026-04-10 -- Phase 4 planning complete
+Last activity: 2026-04-10
 
 Progress: [#####░░░░░] 50%
 
@@ -59,6 +59,7 @@ Progress: [#####░░░░░] 50%
 | Phase 02 P01 | 1min | 2 tasks | 6 files |
 | Phase 03 P01 | 65s | 2 tasks | 4 files |
 | Phase 03-cv-experience P02 | 90s | 2 tasks | 4 files |
+| Phase 04-projects-contact P01 | 156s | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -85,6 +86,9 @@ Recent decisions affecting current work:
 - [Phase 03]: CVSection is a shell in Plan 01; SkillsGrid and CVDownloadButton added in Plan 02
 - [Phase 03-cv-experience]: SkillsGrid uses pill-shaped badges with CSS token references — no proficiency bars per D-07
 - [Phase 03-cv-experience]: CVDownloadButton uses scoped style block for hover/active states (inline styles cannot handle pseudo-classes)
+- [Phase 04-projects-contact]: Projects data in typed readonly array with as const satisfies — mirrors cv.ts pattern
+- [Phase 04-projects-contact]: All SVG icons inline (no icon library) — consistent with ThemeToggle/CVDownloadButton pattern
+- [Phase 04-projects-contact]: Device frame is a styled placeholder with gradient — no image asset needed for Phase 4
 
 ### Pending Todos
 
@@ -96,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-10T09:09:37.477Z
-Stopped at: Phase 4 UI-SPEC approved
-Resume file: .planning/phases/04-projects-contact/04-UI-SPEC.md
+Last session: 2026-04-10T09:26:49.451Z
+Stopped at: Completed 04-projects-contact-01-PLAN.md
+Resume file: None
