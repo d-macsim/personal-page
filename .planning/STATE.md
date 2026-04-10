@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Phase 5 context gathered
-last_updated: "2026-04-10T09:51:35.605Z"
+status: executing
+stopped_at: Completed 05-animations-deploy-05-01-PLAN.md
+last_updated: "2026-04-10T10:27:21.131Z"
 last_activity: 2026-04-10
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 8
-  completed_plans: 8
-  percent: 100
+  total_plans: 10
+  completed_plans: 9
+  percent: 90
 ---
 
 # Project State
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-09)
 
 **Core value:** Visitors instantly understand who Dragos is — an AI specialist who builds products — and can explore his work and download his CV.
-**Current focus:** Phase 04 — projects-contact
+**Current focus:** Phase 05 — animations-deploy
 
 ## Current Position
 
-Phase: 5
-Plan: Not started
-Status: Phase complete — ready for verification
+Phase: 05 (animations-deploy) — EXECUTING
+Plan: 2 of 2
+Status: Ready to execute
 Last activity: 2026-04-10
 
 Progress: [#####░░░░░] 50%
@@ -63,6 +63,7 @@ Progress: [#####░░░░░] 50%
 | Phase 04-projects-contact P01 | 156s | 2 tasks | 7 files |
 | Phase 04-projects-contact P02 | 94 | 2 tasks | 2 files |
 | Phase 04-projects-contact P04-02 | 8 | 3 tasks | 2 files |
+| Phase 05-animations-deploy P01 | 113s | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -96,6 +97,8 @@ Recent decisions affecting current work:
 - [Phase 04-projects-contact]: IntersectionObserver rootMargin -40%/-55% for active section detection in centre of viewport
 - [Phase 04-projects-contact]: Nav uses scrollIntoView (not global CSS scroll-behavior: smooth) — matches HeroSection CTA pattern
 - [Phase 04-projects-contact]: data-active attribute for nav active state — avoids Tailwind JIT purge issues with dynamically added classes
+- [Phase 05-animations-deploy]: Stagger via animation-range nth-child offsets (not animation-delay) — animation-delay shifts scroll axis on scroll timelines, producing no visible stagger
+- [Phase 05-animations-deploy]: SkillsGrid wrapped in div.reveal-stagger to ensure direct-child nth-child selectors target category divs correctly
 
 ### Pending Todos
 
@@ -107,6 +110,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-10T09:51:35.602Z
-Stopped at: Phase 5 context gathered
-Resume file: .planning/phases/05-animations-deploy/05-CONTEXT.md
+Last session: 2026-04-10T10:27:21.129Z
+Stopped at: Completed 05-animations-deploy-05-01-PLAN.md
+Resume file: None

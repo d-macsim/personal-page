@@ -38,7 +38,7 @@
 - [x] **DSGN-01**: Bespoke design system — custom palette, typography, spacing (not template-looking)
 - [x] **DSGN-02**: Responsive layout for mobile, tablet, and desktop
 - [x] **DSGN-03**: Dark mode with toggle
-- [ ] **DSGN-04**: Scroll-reveal animations on sections using Motion library
+- [x] **DSGN-04**: Scroll-reveal animations on sections using Motion library
 
 ### SEO & Deployment
 
@@ -99,7 +99,7 @@
 | PROJ-02 | Phase 4 | Complete |
 | CONT-01 | Phase 4 | Complete |
 | CONT-02 | Phase 4 | Complete |
-| DSGN-04 | Phase 5 | Pending |
+| DSGN-04 | Phase 5 | Complete |
 | DEPLOY-01 | Phase 5 | Pending |
 
 **Coverage:**
