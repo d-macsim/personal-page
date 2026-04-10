@@ -12,16 +12,15 @@ Visitors instantly understand who Dragos is — an AI specialist who builds prod
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] Project showcase section featuring mytai — Validated in Phase 4: Projects & Contact
+- [x] Link to mytai.uk with description and visuals — Validated in Phase 4: Projects & Contact
+- [x] Contact information and social links (email, LinkedIn, GitHub) — Validated in Phase 4: Projects & Contact
 
 ### Active
 
 - [ ] About me section with professional identity (AI + builder hybrid)
 - [ ] Integrated CV display (experience, education, skills from PDF)
 - [ ] Downloadable PDF version of CV
-- [ ] Project showcase section featuring mytai (AI personal trainer app — combat sports form analysis, gym workouts, calorie tracking, weight logging, exercise logging, mobility exercises)
-- [ ] Link to mytai.uk with description and visuals
-- [ ] Contact information and social links (email, LinkedIn, GitHub)
 - [ ] High-quality, polished frontend design — not template-looking
 - [ ] Responsive design (mobile + desktop)
 - [ ] Domain-ready deployment
@@ -79,4 +78,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-09 after initialization*
+*Last updated: 2026-04-10 — Phase 4 (Projects & Contact) complete: mytai showcase card with device frame, contact CTA section, persistent nav with section links and hamburger menu*
