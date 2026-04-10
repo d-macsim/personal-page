@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: verifying
-stopped_at: "Checkpoint: Task 2 of 05-02 awaits manual Cloudflare Pages dashboard setup"
-last_updated: "2026-04-10T15:22:59.158Z"
+stopped_at: Completed 06-01-PLAN.md
+last_updated: "2026-04-10T15:47:37.692Z"
 last_activity: 2026-04-10
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 10
-  completed_plans: 10
+  total_phases: 6
+  completed_phases: 6
+  total_plans: 11
+  completed_plans: 11
   percent: 100
 ---
 
@@ -21,12 +21,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-09)
 
 **Core value:** Visitors instantly understand who Dragos is — an AI specialist who builds products — and can explore his work and download his CV.
-**Current focus:** Phase 05 — animations-deploy
+**Current focus:** Phase 06 — Layout polish — side-by-side experience and education, timeline dot and bar alignment fixes
 
 ## Current Position
 
-Phase: 05
-Plan: Not started
+Phase: 06 (Layout polish — side-by-side experience and education, timeline dot and bar alignment fixes) — EXECUTING
+Plan: 1 of 1
 Status: Phase complete — ready for verification
 Last activity: 2026-04-10
 
@@ -66,6 +66,7 @@ Progress: [#####░░░░░] 50%
 | Phase 04-projects-contact P04-02 | 8 | 3 tasks | 2 files |
 | Phase 05-animations-deploy P01 | 113s | 2 tasks | 8 files |
 | Phase 05-animations-deploy P02 | 36s | 2 tasks | 2 files |
+| Phase 06 P01 | 126s | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -103,6 +104,13 @@ Recent decisions affecting current work:
 - [Phase 05-animations-deploy]: SkillsGrid wrapped in div.reveal-stagger to ensure direct-child nth-child selectors target category divs correctly
 - [Phase 05-animations-deploy]: Node version pinned to 22 via .node-version for Cloudflare Pages build compatibility
 - [Phase 05-animations-deploy]: Security headers applied via Cloudflare Pages _headers file (static-site approach, no server-side logic)
+- [Phase 06]: Generic TimelineColumn with mapped data at call site keeps component domain-agnostic
+- [Phase 06]: Dot alignment fix: left-4 (16px) instead of left-3 (12px) centers dot on spine bar
+- [Phase 06]: Two-column grid: grid-cols-1 md:grid-cols-2 gap-12 — mobile-first, no JS
+
+### Roadmap Evolution
+
+- Phase 6 added: Layout polish — side-by-side experience and education, timeline dot and bar alignment fixes
 
 ### Pending Todos
 
@@ -114,6 +122,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-10T10:29:11.300Z
-Stopped at: Checkpoint: Task 2 of 05-02 awaits manual Cloudflare Pages dashboard setup
+Last session: 2026-04-10T15:47:37.690Z
+Stopped at: Completed 06-01-PLAN.md
 Resume file: None

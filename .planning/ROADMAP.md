@@ -108,7 +108,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 3. CV & Experience | 2/2 | Complete   | 2026-04-09 |
 | 4. Projects & Contact | 2/2 | Complete   | 2026-04-10 |
 | 5. Animations & Deploy | 2/2 | Complete   | 2026-04-10 |
-| 6. Layout Polish | 0/1 | Planning complete | - |
+| 6. Layout Polish | 1/1 | Complete   | 2026-04-10 |
 
 ### Phase 6: Layout polish — side-by-side experience and education, timeline dot and bar alignment fixes
 
@@ -120,7 +120,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
   2. Timeline dots are visually centered on the spine bar (both positioned at left-4 = 16px)
   3. Mobile layout stacks columns vertically with no regression from current behaviour
   4. Each column has its own independent spine bar, dot markers, and stagger animation
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
-- [ ] 06-01-PLAN.md — Create TimelineColumn.astro, refactor CVSection to two-column grid, fix dot alignment, update tests
+- [x] 06-01-PLAN.md — Create TimelineColumn.astro, refactor CVSection to two-column grid, fix dot alignment, update tests
