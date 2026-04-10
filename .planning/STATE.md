@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: "Checkpoint reached: Task 3 visual verification in 04-02-PLAN.md"
-last_updated: "2026-04-10T09:29:51.479Z"
+status: verifying
+stopped_at: Completed 04-projects-contact/04-02-PLAN.md
+last_updated: "2026-04-10T09:31:36.340Z"
 last_activity: 2026-04-10
 progress:
   total_phases: 5
@@ -27,7 +27,7 @@ See: .planning/PROJECT.md (updated 2026-04-09)
 
 Phase: 04 (projects-contact) — EXECUTING
 Plan: 2 of 2
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-04-10
 
 Progress: [#####░░░░░] 50%
@@ -61,6 +61,7 @@ Progress: [#####░░░░░] 50%
 | Phase 03-cv-experience P02 | 90s | 2 tasks | 4 files |
 | Phase 04-projects-contact P01 | 156s | 2 tasks | 7 files |
 | Phase 04-projects-contact P02 | 94 | 2 tasks | 2 files |
+| Phase 04-projects-contact P04-02 | 8 | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -92,6 +93,8 @@ Recent decisions affecting current work:
 - [Phase 04-projects-contact]: Device frame is a styled placeholder with gradient — no image asset needed for Phase 4
 - [Phase 04-projects-contact]: Nav uses scrollIntoView (not global CSS scroll-behavior) — matches HeroSection CTA pattern
 - [Phase 04-projects-contact]: IntersectionObserver rootMargin -40%/-55% for active section detection in centre of viewport
+- [Phase 04-projects-contact]: Nav uses scrollIntoView (not global CSS scroll-behavior: smooth) — matches HeroSection CTA pattern
+- [Phase 04-projects-contact]: data-active attribute for nav active state — avoids Tailwind JIT purge issues with dynamically added classes
 
 ### Pending Todos
 
@@ -103,6 +106,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-10T09:29:45.188Z
-Stopped at: Checkpoint reached: Task 3 visual verification in 04-02-PLAN.md
+Last session: 2026-04-10T09:31:36.339Z
+Stopped at: Completed 04-projects-contact/04-02-PLAN.md
 Resume file: None

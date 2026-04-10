@@ -60,9 +60,9 @@ Sticky nav upgraded from ThemeToggle-only to full navigation with section anchor
 **Security mitigations:**
 - T-04-01: `rel="noopener noreferrer"` verified present on all external links (confirmed by test)
 
-## Checkpoint Pending
+## Visual Verification
 
-Task 3 is `checkpoint:human-verify` — visual verification of nav, projects, and contact sections awaiting user approval.
+Task 3 `checkpoint:human-verify` — visual verification of nav, projects, and contact sections — was approved by user. All Phase 4 visual and interactive elements confirmed working.
 
 ## Deviations from Plan
 
