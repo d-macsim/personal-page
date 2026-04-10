@@ -56,7 +56,7 @@ export const roles: readonly Role[] = [
 export const education: readonly EducationEntry[] = [
   {
     degree: "MSc Business Analytics",
-    institution: "Bayes Business School, City, University of London",
+    institution: "Bayes Business School",
     dateRange: "2024 -- 2026",
     detail: "On track for distinction",
     modules: ["Network Analytics", "Deep Learning", "ML", "Revenue Management"],
