@@ -8,25 +8,27 @@ interface Props {
 const { categories } = Astro.props;
 ---
 
-{
-  categories.map((cat) => (
-    <div class="mb-6">
-      <h3
-        class="text-xs font-semibold uppercase tracking-widest mb-3"
-        style={`font-size: var(--font-size-label); color: var(--color-text-muted);`}
-      >
-        {cat.category}
-      </h3>
-      <div class="flex flex-wrap gap-2">
-        {cat.skills.map((skill) => (
-          <span
-            class="px-3 py-1 rounded-full text-sm font-medium"
-            style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text);"
-          >
-            {skill}
-          </span>
-        ))}
+<div class="reveal-stagger">
+  {
+    categories.map((cat) => (
+      <div class="mb-6">
+        <h3
+          class="text-xs font-semibold uppercase tracking-widest mb-3"
+          style={`font-size: var(--font-size-label); color: var(--color-text-muted);`}
+        >
+          {cat.category}
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {cat.skills.map((skill) => (
+            <span
+              class="px-3 py-1 rounded-full text-sm font-medium"
+              style="background-color: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text);"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
-  ))
-}
+    ))
+  }
+</div>
