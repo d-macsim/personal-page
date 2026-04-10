@@ -51,7 +51,7 @@ export default function HeroSection() {
           color: "var(--color-text-muted)",
         }}
       >
-        AI Specialist & Product Builder
+        AI Data Specialist
       </motion.p>
 
       {/* Tagline */}
