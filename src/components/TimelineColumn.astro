@@ -1,0 +1,67 @@
+---
+interface TimelineEntry {
+  heading: string;
+  subheading: string;
+  dateRange: string;
+  body: string[];
+}
+
+interface Props {
+  title: string;
+  entries: readonly TimelineEntry[];
+}
+
+const { title, entries } = Astro.props;
+---
+
+<div class="relative reveal-stagger">
+  <h3 class="font-semibold mb-6" style="color: var(--color-text);">
+    {title}
+  </h3>
+
+  {/* Spine line — desktop only */}
+  <div
+    class="absolute left-4 top-0 bottom-0 w-px hidden sm:block"
+    style="background-color: var(--color-border);"
+  />
+
+  {
+    entries.map((entry) => (
+      <div class="relative pl-0 sm:pl-12 pb-8 sm:pb-12">
+        {/* Dot marker — left-4 centers dot on spine */}
+        <div
+          class="absolute left-4 top-2 w-2.5 h-2.5 rounded-full -translate-x-1/2 hidden sm:block"
+          style="background-color: var(--color-accent-primary);"
+        />
+
+        {/* Date range */}
+        <span
+          class="text-xs font-semibold uppercase tracking-widest"
+          style={`font-size: var(--font-size-label); color: var(--color-text-muted);`}
+        >
+          {entry.dateRange}
+        </span>
+
+        {/* Heading and subheading */}
+        <h3 class="font-semibold mt-0.5" style="color: var(--color-text);">
+          {entry.heading}
+          <span style="color: var(--color-text-muted);" class="font-normal">
+            {" "}&middot; {entry.subheading}
+          </span>
+        </h3>
+
+        {/* Body items */}
+        <ul class="mt-2 space-y-1 list-disc list-inside">
+          {entry.body.map((item) => (
+            <li
+              class="text-sm leading-relaxed"
+              style="color: var(--color-text-muted);"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))
+  }
+</div>

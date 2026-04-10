@@ -1,8 +1,24 @@
 ---
-import ExperienceTimeline from "./ExperienceTimeline.astro";
+import TimelineColumn from "./TimelineColumn.astro";
 import SkillsGrid from "./SkillsGrid.astro";
 import CVDownloadButton from "./CVDownloadButton.astro";
 import { roles, education, skillCategories } from "../data/cv";
+
+const experienceEntries = roles.map((r) => ({
+  heading: r.title,
+  subheading: r.company,
+  dateRange: r.dateRange,
+  body: r.achievements,
+}));
+
+const educationEntries = education.map((e) => ({
+  heading: e.degree,
+  subheading: e.institution,
+  dateRange: e.dateRange,
+  body: e.modules
+    ? [e.detail, `Modules: ${e.modules.join(", ")}`]
+    : [e.detail],
+}));
 ---
 
 <section id="experience" aria-label="Experience and CV" class="py-16 md:py-24">
@@ -10,11 +26,12 @@ import { roles, education, skillCategories } from "../data/cv";
     class="font-semibold mb-12"
     style={{ fontSize: "var(--font-size-heading)" }}
   >
-    Experience
+    Experience &amp; Education
   </h2>
 
-  <div class="max-w-2xl">
-    <ExperienceTimeline roles={roles} education={education} />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <TimelineColumn title="Experience" entries={experienceEntries} />
+    <TimelineColumn title="Education" entries={educationEntries} />
   </div>
 
   <div class="max-w-2xl mt-16">
