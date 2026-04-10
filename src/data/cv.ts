@@ -63,7 +63,7 @@ export const education: readonly EducationEntry[] = [
   },
   {
     degree: "BSc Information Management for Business",
-    institution: "University College London (UCL)",
+    institution: "UCL",
     dateRange: "2022 -- 2025",
     detail: "Upper second class honours (2:1)",
   },

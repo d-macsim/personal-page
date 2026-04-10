@@ -8,16 +8,14 @@ const experienceEntries = roles.map((r) => ({
   heading: r.title,
   subheading: r.company,
   dateRange: r.dateRange,
-  body: r.achievements,
+  body: [],
 }));
 
 const educationEntries = education.map((e) => ({
   heading: e.degree,
   subheading: e.institution,
   dateRange: e.dateRange,
-  body: e.modules
-    ? [e.detail, `Modules: ${e.modules.join(", ")}`]
-    : [e.detail],
+  body: [],
 }));
 ---
 
