@@ -38,4 +38,25 @@ export const projects: readonly Project[] = [
     url: "https://mytai.uk",
     urlLabel: "Visit mytai.uk",
   },
+  {
+    id: "homelab",
+    title: "Homelab",
+    tagline: "Self-hosted infrastructure",
+    description:
+      "Built and maintain a personal home server running Linux with Docker containers for self-hosted services. Manages smart home automation, network-wide ad blocking, and various self-hosted applications.",
+    bullets: [
+      "Home Assistant for smart home automation and device management",
+      "AdGuard Home for network-wide DNS-based ad and tracker blocking",
+      "Dockerised services on Ubuntu Server with automated backups",
+    ],
+    techStack: [
+      { label: "Linux" },
+      { label: "Docker" },
+      { label: "Home Assistant" },
+      { label: "AdGuard Home" },
+      { label: "Networking" },
+    ],
+    url: "",
+    urlLabel: "",
+  },
 ] as const satisfies readonly Project[];
