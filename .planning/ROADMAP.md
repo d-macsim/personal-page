@@ -90,7 +90,10 @@ Plans:
   2. Animations do not block content access — sections are fully readable if JavaScript is disabled or the animation has not yet triggered
   3. The site loads correctly at the custom domain over HTTPS with no browser security warnings
   4. Cloudflare Pages build completes without errors and subsequent pushes to main auto-deploy
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 05-01-PLAN.md — CSS scroll-reveal animations on all non-hero sections with @supports fallback and reduced-motion support
+- [ ] 05-02-PLAN.md — Cloudflare Pages deployment with .node-version, security headers, and custom domain setup
 **UI hint**: yes
 
 ## Progress
@@ -104,4 +107,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 2. Identity & Hero | 0/2 | Planning complete | - |
 | 3. CV & Experience | 2/2 | Complete   | 2026-04-09 |
 | 4. Projects & Contact | 2/2 | Complete   | 2026-04-10 |
-| 5. Animations & Deploy | 0/TBD | Not started | - |
+| 5. Animations & Deploy | 0/2 | Planning complete | - |
