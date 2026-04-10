@@ -82,8 +82,8 @@ describe("Scroll-Reveal CSS — component classes", () => {
     expect(about).toMatch(/class="[^"]*reveal/);
   });
 
-  it("Test 9: ExperienceTimeline.astro contains class attribute with reveal-stagger", () => {
-    const timeline = readComponent("ExperienceTimeline.astro");
+  it("Test 9: TimelineColumn.astro contains class attribute with reveal-stagger", () => {
+    const timeline = readComponent("TimelineColumn.astro");
     expect(timeline).toMatch(/class="[^"]*reveal-stagger/);
   });
 

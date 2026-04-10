@@ -8,11 +8,11 @@ const readFile = (rel: string) =>
   readFileSync(join(ROOT, rel), "utf-8");
 
 describe("EXP-01: Experience timeline", () => {
-  const timeline = readFile("src/components/ExperienceTimeline.astro");
+  const timeline = readFile("src/components/TimelineColumn.astro");
   const cvData = readFile("src/data/cv.ts");
 
-  it("ExperienceTimeline.astro exists", () => {
-    expect(existsSync(join(ROOT, "src/components/ExperienceTimeline.astro"))).toBe(true);
+  it("TimelineColumn.astro exists", () => {
+    expect(existsSync(join(ROOT, "src/components/TimelineColumn.astro"))).toBe(true);
   });
 
   it("cv.ts contains AI Specialist role title", () => {
@@ -38,21 +38,21 @@ describe("EXP-01: Experience timeline", () => {
     expect(titleMatches!.length).toBeGreaterThanOrEqual(3);
   });
 
-  it("ExperienceTimeline.astro iterates achievements", () => {
-    expect(timeline).toMatch(/role\.achievements|\.achievements\.map/);
+  it("TimelineColumn.astro iterates entry.body", () => {
+    expect(timeline).toMatch(/entry\.body/);
   });
 
-  it("ExperienceTimeline.astro uses color-accent-primary for dot markers", () => {
+  it("TimelineColumn.astro uses color-accent-primary for dot markers", () => {
     expect(timeline).toContain("color-accent-primary");
   });
 
-  it("ExperienceTimeline.astro uses color-border for spine line", () => {
+  it("TimelineColumn.astro uses color-border for spine line", () => {
     expect(timeline).toContain("color-border");
   });
 });
 
 describe("EXP-02: Education section", () => {
-  const timeline = readFile("src/components/ExperienceTimeline.astro");
+  const timeline = readFile("src/components/TimelineColumn.astro");
   const cvData = readFile("src/data/cv.ts");
 
   it("cv.ts contains MSc Business Analytics", () => {
@@ -75,12 +75,8 @@ describe("EXP-02: Education section", () => {
     expect(cvData).toContain("modules");
   });
 
-  it("ExperienceTimeline.astro contains Education separator label", () => {
-    expect(timeline).toContain("Education");
-  });
-
-  it("ExperienceTimeline.astro conditionally renders entry.modules", () => {
-    expect(timeline).toContain("entry.modules");
+  it("TimelineColumn.astro renders entry.body items", () => {
+    expect(timeline).toContain("entry.body");
   });
 });
 
@@ -165,8 +161,8 @@ describe("CV section integration", () => {
     expect(cvSection).toContain('aria-label="Experience and CV"');
   });
 
-  it("CVSection.astro imports ExperienceTimeline", () => {
-    expect(cvSection).toContain("import ExperienceTimeline");
+  it("CVSection.astro imports TimelineColumn", () => {
+    expect(cvSection).toContain("import TimelineColumn");
   });
 
   it("CVSection.astro imports SkillsGrid", () => {
@@ -175,6 +171,18 @@ describe("CV section integration", () => {
 
   it("CVSection.astro imports CVDownloadButton", () => {
     expect(cvSection).toContain("import CVDownloadButton");
+  });
+
+  it("CVSection.astro uses two-column grid layout", () => {
+    expect(cvSection).toContain("md:grid-cols-2");
+  });
+
+  it("CVSection.astro maps roles to TimelineEntry", () => {
+    expect(cvSection).toContain("roles.map");
+  });
+
+  it("CVSection.astro maps education to TimelineEntry", () => {
+    expect(cvSection).toContain("education.map");
   });
 
   it("index.astro imports CVSection", () => {
@@ -187,5 +195,21 @@ describe("CV section integration", () => {
 
   it("index.astro renders CVSection without React island directive", () => {
     expect(indexPage).not.toMatch(/CVSection\s+client:/);
+  });
+});
+
+describe("LAYOUT-02: Dot alignment", () => {
+  const timeline = readFile("src/components/TimelineColumn.astro");
+
+  it("dot uses left-4 to align with spine", () => {
+    expect(timeline).toContain("left-4 top-2 w-2.5 h-2.5 rounded-full");
+  });
+
+  it("dot does NOT use left-3 (the misaligned value)", () => {
+    expect(timeline).not.toMatch(/left-3.*rounded-full/);
+  });
+
+  it("spine uses left-4 matching dot position", () => {
+    expect(timeline).toContain("left-4 top-0 bottom-0 w-px");
   });
 });
