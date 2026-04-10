@@ -17,13 +17,13 @@ export const contactLinks: readonly ContactLink[] = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/dragos-macsim/",
+    href: "https://www.linkedin.com/in/dragosmacsim/",
     isExternal: true,
     iconType: "linkedin",
   },
   {
     label: "GitHub",
-    href: "https://github.com/dragos-macsim",
+    href: "https://github.com/d-macsim",
     isExternal: true,
     iconType: "github",
   },
