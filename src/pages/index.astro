@@ -3,10 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroSection from "../components/HeroSection.tsx";
 import AboutSection from "../components/AboutSection.astro";
 import CVSection from "../components/CVSection.astro";
+import ProjectsSection from "../components/ProjectsSection.astro";
+import ContactSection from "../components/ContactSection.astro";
 ---
 
 <BaseLayout title="Dragos Macsim -- AI Specialist & Product Builder">
   <HeroSection client:load />
   <AboutSection />
   <CVSection />
+  <ProjectsSection />
+  <ContactSection />
 </BaseLayout>

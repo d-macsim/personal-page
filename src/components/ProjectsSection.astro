@@ -1,0 +1,18 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+import { projects } from "../data/projects";
+---
+
+<section id="projects" aria-label="Projects" class="py-16 md:py-24">
+  <div class="max-w-[1100px] mx-auto">
+    <h2
+      class="font-semibold mb-12"
+      style={{ fontSize: "var(--font-size-heading)" }}
+    >
+      Projects
+    </h2>
+    <div class="grid grid-cols-1 gap-8">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+</section>
