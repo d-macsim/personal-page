@@ -11,7 +11,7 @@ export interface ContactLink {
 export const contactLinks: readonly ContactLink[] = [
   {
     label: "Email",
-    href: "mailto:dragosmacsim@outlook.com",
+    href: "mailto:dragosmacsim@protonmail.com",
     isExternal: false,
     iconType: "email",
   },
