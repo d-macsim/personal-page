@@ -21,9 +21,9 @@ Visitors instantly understand who Dragos is — an AI specialist who builds prod
 - [ ] About me section with professional identity (AI + builder hybrid)
 - [ ] Integrated CV display (experience, education, skills from PDF)
 - [ ] Downloadable PDF version of CV
-- [ ] High-quality, polished frontend design — not template-looking
+- [x] High-quality, polished frontend design — not template-looking — Validated in Phase 5: Animations & Deploy
 - [ ] Responsive design (mobile + desktop)
-- [ ] Domain-ready deployment
+- [x] Domain-ready deployment — Validated in Phase 5: Animations & Deploy (live at dragosmacsim.com)
 
 ### Out of Scope
 
@@ -78,4 +78,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-10 — Phase 4 (Projects & Contact) complete: mytai showcase card with device frame, contact CTA section, persistent nav with section links and hamburger menu*
+*Last updated: 2026-04-10 — Phase 5 (Animations & Deploy) complete: CSS scroll-reveal animations on all sections, deployed to dragosmacsim.com via Cloudflare Pages with HTTPS and security headers*
