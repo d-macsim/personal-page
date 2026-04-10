@@ -18,13 +18,131 @@ const { title, description } = Astro.props;
     <Head title={title} description={description} />
   </head>
   <body class="bg-base text-text min-h-dvh transition-colors duration-300 ease-in-out">
-    <nav class="fixed top-0 right-0 left-0 z-50 bg-base/80 backdrop-blur-sm border-b border-border transition-colors duration-300 ease-in-out">
-      <div class="max-w-[1100px] mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-end h-14">
-        <ThemeToggle />
+    <nav aria-label="Main navigation" class="fixed top-0 right-0 left-0 z-50 bg-base/80 backdrop-blur-sm border-b border-border transition-colors duration-300 ease-in-out">
+      <div class="max-w-[1100px] mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between h-14">
+        <!-- Left: empty spacer for layout balance -->
+        <div class="hidden md:block"></div>
+
+        <!-- Center-right: desktop nav links (hidden on mobile) -->
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#about" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">About</a>
+          <a href="#experience" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
+          <a href="#projects" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
+          <a href="#contact" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
+        </div>
+
+        <!-- Right: ThemeToggle + hamburger (mobile only) -->
+        <div class="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            id="hamburger-btn"
+            class="md:hidden flex items-center justify-center w-11 h-11 rounded-lg transition-colors duration-200"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+          >
+            <svg id="hamburger-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <line x1="3" y1="12" x2="21" y2="12"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+            <svg id="close-icon" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile dropdown menu (hidden by default) per D-07 -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-border" style="background-color: var(--color-base);">
+        <div class="max-w-[1100px] mx-auto px-4 py-2">
+          <a href="#about" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">About</a>
+          <a href="#experience" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
+          <a href="#projects" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
+          <a href="#contact" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
+        </div>
       </div>
     </nav>
     <main class="max-w-[1100px] mx-auto px-4 md:px-8 lg:px-12 pt-20">
       <slot />
     </main>
+
+    <script>
+      // Hamburger menu toggle
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      hamburgerBtn?.addEventListener('click', () => {
+        const isOpen = !mobileMenu?.classList.contains('hidden');
+        mobileMenu?.classList.toggle('hidden', isOpen);
+        hamburgerIcon?.classList.toggle('hidden', !isOpen);
+        closeIcon?.classList.toggle('hidden', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      // Close mobile menu when a link is clicked
+      const mobileLinks = document.querySelectorAll('#mobile-menu a');
+      mobileLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu?.classList.add('hidden');
+          hamburgerIcon?.classList.remove('hidden');
+          closeIcon?.classList.add('hidden');
+          hamburgerBtn?.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Smooth scroll for all nav links (per D-09 — use scrollIntoView, NOT global CSS scroll-behavior)
+      const allNavLinks = document.querySelectorAll('[data-nav-link]');
+      allNavLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const href = link.getAttribute('href');
+          if (href) {
+            const target = document.querySelector(href);
+            target?.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Intersection Observer for active section highlighting (per D-08)
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('[data-nav-link]');
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((navLink) => {
+                const href = navLink.getAttribute('href');
+                if (href === `#${entry.target.id}`) {
+                  navLink.setAttribute('data-active', 'true');
+                } else {
+                  navLink.removeAttribute('data-active');
+                }
+              });
+            }
+          });
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
   </body>
 </html>
+
+<style is:global>
+  [data-nav-link][data-active="true"] {
+    color: var(--color-accent-primary) !important;
+  }
+  [data-nav-link][data-active="true"].nav-link {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+  }
+  [data-nav-link]:hover {
+    color: var(--color-text) !important;
+  }
+</style>
