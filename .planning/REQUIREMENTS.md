@@ -44,7 +44,7 @@
 
 - [ ] **SEO-01**: Open Graph meta tags for LinkedIn/social sharing (title, description, image)
 - [ ] **SEO-02**: Semantic HTML with proper heading hierarchy and meta description
-- [ ] **DEPLOY-01**: Deployed to production on custom domain with HTTPS
+- [x] **DEPLOY-01**: Deployed to production on custom domain with HTTPS
 
 ## v2 Requirements
 
@@ -100,7 +100,7 @@
 | CONT-01 | Phase 4 | Complete |
 | CONT-02 | Phase 4 | Complete |
 | DSGN-04 | Phase 5 | Complete |
-| DEPLOY-01 | Phase 5 | Pending |
+| DEPLOY-01 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 20 total
