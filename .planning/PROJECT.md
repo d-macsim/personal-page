@@ -19,7 +19,7 @@ Visitors instantly understand who Dragos is — an AI specialist who builds prod
 ### Active
 
 - [ ] About me section with professional identity (AI + builder hybrid)
-- [ ] Integrated CV display (experience, education, skills from PDF)
+- [x] Integrated CV display (experience, education, skills from PDF) — Validated in Phase 6: Layout Polish
 - [ ] Downloadable PDF version of CV
 - [x] High-quality, polished frontend design — not template-looking — Validated in Phase 5: Animations & Deploy
 - [ ] Responsive design (mobile + desktop)
