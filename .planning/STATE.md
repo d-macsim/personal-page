@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-projects-contact-01-PLAN.md
-last_updated: "2026-04-10T09:26:49.453Z"
+stopped_at: "Checkpoint reached: Task 3 visual verification in 04-02-PLAN.md"
+last_updated: "2026-04-10T09:29:51.479Z"
 last_activity: 2026-04-10
 progress:
   total_phases: 5
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 8
-  completed_plans: 7
-  percent: 88
+  completed_plans: 8
+  percent: 100
 ---
 
 # Project State
@@ -60,6 +60,7 @@ Progress: [#####░░░░░] 50%
 | Phase 03 P01 | 65s | 2 tasks | 4 files |
 | Phase 03-cv-experience P02 | 90s | 2 tasks | 4 files |
 | Phase 04-projects-contact P01 | 156s | 2 tasks | 7 files |
+| Phase 04-projects-contact P02 | 94 | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -89,6 +90,8 @@ Recent decisions affecting current work:
 - [Phase 04-projects-contact]: Projects data in typed readonly array with as const satisfies — mirrors cv.ts pattern
 - [Phase 04-projects-contact]: All SVG icons inline (no icon library) — consistent with ThemeToggle/CVDownloadButton pattern
 - [Phase 04-projects-contact]: Device frame is a styled placeholder with gradient — no image asset needed for Phase 4
+- [Phase 04-projects-contact]: Nav uses scrollIntoView (not global CSS scroll-behavior) — matches HeroSection CTA pattern
+- [Phase 04-projects-contact]: IntersectionObserver rootMargin -40%/-55% for active section detection in centre of viewport
 
 ### Pending Todos
 
@@ -100,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-10T09:26:49.451Z
-Stopped at: Completed 04-projects-contact-01-PLAN.md
+Last session: 2026-04-10T09:29:45.188Z
+Stopped at: Checkpoint reached: Task 3 visual verification in 04-02-PLAN.md
 Resume file: None

@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 1: Foundation** - Astro project scaffold and bespoke design system (palette, typography, dark mode)
 - [ ] **Phase 2: Identity & Hero** - Narrative framing, hero section, about section, and SEO metadata
 - [x] **Phase 3: CV & Experience** - Experience timeline, education, skills, and downloadable PDF (completed 2026-04-09)
-- [ ] **Phase 4: Projects & Contact** - mytai showcase card and contact section with persistent nav
+- [x] **Phase 4: Projects & Contact** - mytai showcase card and contact section with persistent nav (completed 2026-04-10)
 - [ ] **Phase 5: Animations & Deploy** - Scroll-reveal animations and production deployment on custom domain
 
 ## Phase Details
@@ -75,10 +75,10 @@ Plans:
   2. The projects section markup supports adding additional project cards without restructuring the layout
   3. A contact section lists email, LinkedIn, and GitHub as clickable links
   4. A persistent navigation element (sticky nav or section CTAs) gives access to the contact section from any scroll position
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [x] 04-01-PLAN.md — Project data files, mytai showcase card, contact CTA section, and page integration
-- [ ] 04-02-PLAN.md — Nav bar upgrade with section anchors, hamburger menu, active state, tests, and visual verification
+- [x] 04-02-PLAN.md — Nav bar upgrade with section anchors, hamburger menu, active state, tests, and visual verification
 **UI hint**: yes
 
 ### Phase 5: Animations & Deploy
@@ -103,5 +103,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
 | 1. Foundation | 0/2 | Planning complete | - |
 | 2. Identity & Hero | 0/2 | Planning complete | - |
 | 3. CV & Experience | 2/2 | Complete   | 2026-04-09 |
-| 4. Projects & Contact | 1/2 | In Progress|  |
+| 4. Projects & Contact | 2/2 | Complete   | 2026-04-10 |
 | 5. Animations & Deploy | 0/TBD | Not started | - |

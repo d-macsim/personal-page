@@ -31,7 +31,7 @@
 ### Contact
 
 - [x] **CONT-01**: Contact section with email, LinkedIn, and GitHub links
-- [ ] **CONT-02**: Contact reachable from any section (persistent nav or CTA)
+- [x] **CONT-02**: Contact reachable from any section (persistent nav or CTA)
 
 ### Design System
 
@@ -98,7 +98,7 @@
 | PROJ-01 | Phase 4 | Complete |
 | PROJ-02 | Phase 4 | Complete |
 | CONT-01 | Phase 4 | Complete |
-| CONT-02 | Phase 4 | Pending |
+| CONT-02 | Phase 4 | Complete |
 | DSGN-04 | Phase 5 | Pending |
 | DEPLOY-01 | Phase 5 | Pending |
 
