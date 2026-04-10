@@ -22,17 +22,18 @@ export const projects: readonly Project[] = [
     title: "mytai",
     tagline: "Your AI personal trainer",
     description:
-      "An all-in-one AI personal trainer app built with React Native and Expo. Combat sports form analysis using on-device AI, gym workout logging, calorie tracking, weight tracking, and mobility exercises — privacy-first with on-device processing.",
+      "A fitness app with AI-powered video analysis for combat sports technique, food and exercise logging with barcode scanning, mobility drills, and a recovery dashboard pulling data from Apple Health.",
     bullets: [
-      "On-device AI form analysis for combat sports — no data leaves your device",
-      "Full workout logging: gym sessions, calorie tracking, weight tracking",
-      "iOS available now — Android coming soon",
+      "AI video analysis for combat sports form — camera-guided recording with exercise catalogue",
+      "Food logging with barcode scanner, exercise tracking, and weight logging",
+      "Mobility drills library with guided exercises and progress tracking",
+      "Dashboard with recovery scores from Apple Health (HRV, sleep, resting heart rate)",
     ],
     techStack: [
       { label: "React Native" },
       { label: "Expo" },
-      { label: "On-device AI" },
       { label: "TypeScript" },
+      { label: "Apple Health" },
       { label: "iOS" },
     ],
     url: "https://mytai.uk",
