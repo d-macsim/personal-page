@@ -46,6 +46,15 @@
 - [ ] **SEO-02**: Semantic HTML with proper heading hierarchy and meta description
 - [x] **DEPLOY-01**: Deployed to production on custom domain with HTTPS
 
+
+### /now Page
+
+- [ ] **NOW-01**: /now page renders at build time under src/pages/now.astro and is reachable at /now
+- [ ] **NOW-02**: /now link is visible in site navigation (desktop + mobile)
+- [ ] **NOW-03**: Nav click handler guards hash-only vs route links (preventDefault only on hash anchors)
+- [ ] **NOW-04**: /now page contains at least three h2 sections (Working on / Learning / Location or equivalent)
+- [ ] **NOW-05**: /now page displays a "Last updated" date and links to nownownow.com/about as attribution
+
 ## v2 Requirements
 
 ### Project Showcase
@@ -101,6 +110,12 @@
 | CONT-02 | Phase 4 | Complete |
 | DSGN-04 | Phase 5 | Complete |
 | DEPLOY-01 | Phase 5 | Complete |
+
+| NOW-01 | Phase 7 | Pending |
+| NOW-02 | Phase 7 | Pending |
+| NOW-03 | Phase 7 | Pending |
+| NOW-04 | Phase 7 | Pending |
+| NOW-05 | Phase 7 | Pending |
 
 **Coverage:**
 - v1 requirements: 20 total

@@ -403,12 +403,12 @@ Then `BaseLayout.astro` forwards `ogImageSlug` from its own props to `<Head>`, a
 
 ---
 
-## Open Questions for Planner
+## Open Questions for Planner (RESOLVED)
 
-1. **Cloudflare Web Analytics token** — does the user already have a site registered in `dash.cloudflare.com → Web Analytics`? If not, they must create it before this phase can deploy. The planner should mark this as a user-action prerequisite in plan 07-NN-PLAN.md.
-2. **`/now` page content** — actual prose needs to come from the user. Planner should draft placeholder content that the user confirms or edits during /gsd-discuss-phase. `[ASSUMED: user provides current focus, projects, reading list]`
-3. **Extended JSON-LD fields** — `knowsAbout`, `alumniOf`, `worksFor` are optional. Should they be populated from `src/data/cv.ts` (DRY) or hand-maintained in `Head.astro`? Planner decides; recommended to hand-maintain for simplicity (the JSON-LD is homepage-only).
-4. **OG image list** — for Phase 7 there are only two pages (`/` and `/now`), so two OG images. Future case studies (Phase 8+) will add more — the `.png.ts` `getStaticPaths` array is the single source of truth for what gets generated.
+1. **Cloudflare Web Analytics token** — does the user already have a site registered in `dash.cloudflare.com → Web Analytics`? If not, they must create it before this phase can deploy. The planner should mark this as a user-action prerequisite in plan 07-NN-PLAN.md. — **RESOLVED:** user supplies via `.env` as `PUBLIC_CF_ANALYTICS_TOKEN`; Plan 01 creates `.env.example`; Plan 03 fail-closed guard renders no beacon when absent.
+2. **`/now` page content** — actual prose needs to come from the user. Planner should draft placeholder content that the user confirms or edits during /gsd-discuss-phase. `[ASSUMED: user provides current focus, projects, reading list]` — **RESOLVED:** placeholder prose from UI-SPEC Copywriting Contract (Bayes MSc + mytai + Mindrift), hand-edited per update; `LAST_UPDATED` constant at top of `src/pages/now.astro`.
+3. **Extended JSON-LD fields** — `knowsAbout`, `alumniOf`, `worksFor` are optional. Should they be populated from `src/data/cv.ts` (DRY) or hand-maintained in `Head.astro`? Planner decides; recommended to hand-maintain for simplicity (the JSON-LD is homepage-only). — **RESOLVED:** hand-maintained literal object in `src/components/Head.astro`; `knowsAbout` list: AI, Machine Learning, Data Science, Product, Python, TypeScript, React Native.
+4. **OG image list** — for Phase 7 there are only two pages (`/` and `/now`), so two OG images. Future case studies (Phase 8+) will add more — the `.png.ts` `getStaticPaths` array is the single source of truth for what gets generated. — **RESOLVED:** hardcoded `PAGES = ['home', 'now'] as const` in `src/pages/og/[slug].png.ts` (compile-time allowlist mitigates T-7-06); future case studies append entries.
 
 ---
 
