@@ -7,15 +7,20 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 interface Props {
   title: string;
   description?: string;
+  /** Slug for per-page OG image; forwarded to Head.astro. Omit to use fallback /og-image.png. */
+  ogImageSlug?: string;
+  /** Accessible alt text for the OG image. */
+  ogImageAlt?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, ogImageSlug, ogImageAlt } = Astro.props;
+const cfAnalyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
 ---
 
 <!doctype html>
 <html lang="en" class="dark">
   <head>
-    <Head title={title} description={description} />
+    <Head title={title} description={description} ogImageSlug={ogImageSlug} ogImageAlt={ogImageAlt} />
   </head>
   <body class="bg-base text-text min-h-dvh transition-colors duration-300 ease-in-out">
     <nav aria-label="Main navigation" class="fixed top-0 right-0 left-0 z-50 bg-base/80 backdrop-blur-sm border-b border-border transition-colors duration-300 ease-in-out">
@@ -29,6 +34,7 @@ const { title, description } = Astro.props;
           <a href="#experience" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
           <a href="#projects" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
           <a href="#contact" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
+          <a href="/now" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Now</a>
         </div>
 
         <!-- Right: ThemeToggle + hamburger (mobile only) -->
@@ -60,6 +66,7 @@ const { title, description } = Astro.props;
           <a href="#experience" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
           <a href="#projects" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
           <a href="#contact" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
+          <a href="/now" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Now</a>
         </div>
       </div>
     </nav>
@@ -93,18 +100,26 @@ const { title, description } = Astro.props;
         });
       });
 
-      // Smooth scroll for all nav links (per D-09 — use scrollIntoView, NOT global CSS scroll-behavior)
+      // Smooth scroll for hash anchors only — real routes (e.g. /now) navigate normally.
+      // Without this guard, the handler would preventDefault() on /now clicks and the page would not load.
       const allNavLinks = document.querySelectorAll('[data-nav-link]');
       allNavLinks.forEach((link) => {
         link.addEventListener('click', (e) => {
-          e.preventDefault();
           const href = link.getAttribute('href');
-          if (href) {
-            const target = document.querySelector(href);
-            target?.scrollIntoView({ behavior: 'smooth' });
-          }
+          if (!href || !href.startsWith('#')) return; // let real pages navigate normally
+          e.preventDefault();
+          const target = document.querySelector(href);
+          target?.scrollIntoView({ behavior: 'smooth' });
         });
       });
+
+      // Mark the /now link active when we're on the /now route.
+      // Runs once at script load; the IntersectionObserver below only touches section[id] anchors,
+      // so it will not overwrite this data-active attribute.
+      if (window.location.pathname === '/now' || window.location.pathname === '/now/') {
+        const nowLinks = document.querySelectorAll('[data-nav-link][href="/now"]');
+        nowLinks.forEach((link) => link.setAttribute('data-active', 'true'));
+      }
 
       // Intersection Observer for active section highlighting (per D-08)
       const sections = document.querySelectorAll('section[id]');
@@ -130,6 +145,15 @@ const { title, description } = Astro.props;
 
       sections.forEach((section) => observer.observe(section));
     </script>
+
+    {import.meta.env.PROD && cfAnalyticsToken && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${cfAnalyticsToken}"}`}
+      />
+    )}
   </body>
 </html>
 
