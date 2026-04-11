@@ -2,27 +2,50 @@
 interface Props {
   title: string;
   description?: string;
-  ogImage?: string;
+  /**
+   * Optional slug identifying a per-page OG image at /og/<slug>.png.
+   * If omitted, falls back to the static /og-image.png.
+   * The slug must be present in src/pages/og/[slug].png.ts's allowlist (see Plan 04).
+   */
+  ogImageSlug?: string;
+  /** Accessible alt text for the OG image. Required when ogImageSlug is set. */
+  ogImageAlt?: string;
 }
 
 const {
   title,
   description = "Dragos Macsim — AI data specialist. Explore my work, experience, and download my CV.",
-  ogImage = "/og-image.png",
+  ogImageSlug,
+  ogImageAlt,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).toString();
-const ogImageAbsolute = new URL(ogImage, Astro.site).toString();
+const ogImagePath = ogImageSlug ? `/og/${ogImageSlug}.png` : "/og-image.png";
+const ogImageAbsolute = new URL(ogImagePath, Astro.site).toString();
+const ogImageAltText = ogImageAlt ?? "Dragos Macsim — AI Specialist & Product Builder";
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Dragos Macsim",
+  givenName: "Dragos",
+  familyName: "Macsim",
   jobTitle: "AI Data Specialist",
+  description: "AI specialist who builds products — data, ML, and shipping.",
   url: Astro.site?.toString(),
+  image: new URL("/profile.jpg", Astro.site).toString(),
+  email: "mailto:dragosmacsim@protonmail.com",
   sameAs: [
     "https://www.linkedin.com/in/dragosmacsim/",
     "https://github.com/d-macsim",
+  ],
+  knowsAbout: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Data Analysis",
+    "Product Development",
+    "Python",
+    "TypeScript",
   ],
 };
 ---
@@ -40,10 +63,16 @@ const jsonLd = {
 <meta property="og:image" content={ogImageAbsolute} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ogImageAltText} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageAbsolute} />
+<meta name="twitter:image:alt" content={ogImageAltText} />
+<!--
+  T-7-01 mitigation: all JSON-LD values are hand-maintained literals in the frontmatter above.
+  Never inject Astro.props or other runtime-derived strings into jsonLd without escaping `</` as `<\/`.
+-->
 <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 <script is:inline>
   (function() {
