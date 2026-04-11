@@ -124,3 +124,27 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 Plans:
 - [x] 06-01-PLAN.md — Create TimelineColumn.astro, refactor CVSection to two-column grid, fix dot alignment, update tests
+
+### Phase 7: Discoverability & Social Presence — make the site discoverable and shareable. Scope: (1) SEO fundamentals: add @astrojs/sitemap for sitemap.xml, robots.txt, JSON-LD Person schema on homepage, proper per-page meta description/title. (2) Cloudflare Web Analytics: wire the beacon into BaseLayout (cookieless, no GDPR banner). (3) /now page: lightweight nownownow.com-style current-focus page listing what Dragos is working on right now, linked from nav. (4) Per-page OG images: build-time generation via Satori / @vercel/og so each page (homepage, /now, future case studies) gets a branded social card. Goal: recruiters can Google Dragos, find the site, share it, and see real traffic analytics.
+
+**Goal:** Recruiters can Google Dragos and find the site, share it (branded OG cards on every page), see real cookieless traffic, and visit a /now page describing current focus. SEO fundamentals (sitemap, robots.txt, extended JSON-LD Person), Cloudflare Web Analytics beacon, /now page, and per-page OG image generation are all live in production.
+**Requirements**: SEO-03, SEO-04, SEO-05, SEO-06, SEO-07, ANALYTICS-01, NOW-01, NOW-02, NOW-03, NOW-04, NOW-05, OG-01, OG-02, OG-03, OG-04, OG-05, OG-06
+**Depends on:** Phase 6
+**Plans:** 5 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — Wave 0: install sitemap/satori/resvg/non-variable Inter deps, update astro.config.mjs, type PUBLIC_CF_ANALYTICS_TOKEN, scaffold six phase7 test files
+- [ ] 07-02-PLAN.md — Wave 1: public/robots.txt + Head.astro extended Person JSON-LD + ogImageSlug prop + og:image:alt meta
+- [ ] 07-03-PLAN.md — Wave 1: /now page + BaseLayout nav Now link + hash-only scroll guard + active-route setter + CF Web Analytics beacon (PROD-guarded)
+- [ ] 07-04-PLAN.md — Wave 1: src/lib/og-image.ts (Satori+resvg helper) + src/pages/og/[slug].png.ts endpoint with compile-time slug allowlist (T-7-06)
+- [ ] 07-05-PLAN.md — Wave 2: wire index.astro ogImageSlug="home", full build+vitest+playwright gate, user visual verification checkpoint
+
+### Phase 8: Quality Hardening & Polish — raise the site to a 100/100/100/100 production standard with CI guardrails. Scope: (1) Accessibility audit and fixes using axe-core or Pa11y: keyboard navigation, visible focus rings, colour contrast on theme toggle, alt text on profile photo and project icons. (2) Performance budget with Lighthouse CI targeting 100/100/100/100 across Performance, Accessibility, Best Practices, SEO — budget file committed to repo. (3) E2E smoke test in CI: Playwright test that loads /, triggers CV download, toggles theme, scrolls to contact section — wired to GitHub Actions on push/PR. (4) prefers-reduced-motion support on hero entrance animation and any Motion islands — honour user setting. (5) @media print stylesheet: hide nav and theme toggle, black text, show URLs — clean recruiter printouts. (6) Custom branded 404 page matching site design instead of Astro default. (7) Astro 5 <ViewTransitions /> for smooth cross-page navigation once additional routes exist. Goal: site is measurably high-quality, accessible, and regression-proof via CI.
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 7
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 8 to break down)
