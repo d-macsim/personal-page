@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const LAST_UPDATED = "April 2026";
+---
+
+<BaseLayout
+  title="What I'm doing now — Dragos Macsim"
+  description="Current focus: what Dragos is working on, learning, and building right now. Updated monthly."
+  ogImageSlug="now"
+  ogImageAlt="What I'm doing now — Dragos Macsim"
+>
+  <section aria-label="Now" class="py-16 md:py-24">
+    <h1 class="font-bold mb-8" style="font-size: var(--font-size-display); line-height: 1.1;">
+      What I'm doing now
+    </h1>
+
+    <div class="reveal">
+      <p class="prose" style="color: var(--color-text-muted); font-size: var(--font-size-label); margin-bottom: 2rem;">
+        Last updated: {LAST_UPDATED}
+      </p>
+
+      <div class="prose" style="font-size: var(--font-size-body); color: var(--color-text);">
+        <p>
+          Right now I'm finishing my MSc dissertation at Bayes Business School and pushing mytai toward
+          its first public release on iOS. I'm splitting time between ML evaluation work at Mindrift
+          and product work on mytai.
+        </p>
+      </div>
+
+      <h2 class="font-semibold mt-12 mb-4" style="font-size: var(--font-size-heading);">Working on</h2>
+      <ul class="prose" style="font-size: var(--font-size-body); color: var(--color-text); list-style: disc; padding-left: 1.5rem;">
+        <li>mytai — AI-powered fitness app, iOS TestFlight beta</li>
+        <li>MSc dissertation at Bayes Business School</li>
+        <li>Automated web scraping and ML evaluation workflows at Mindrift</li>
+      </ul>
+
+      <h2 class="font-semibold mt-12 mb-4" style="font-size: var(--font-size-heading);">Learning</h2>
+      <ul class="prose" style="font-size: var(--font-size-body); color: var(--color-text); list-style: disc; padding-left: 1.5rem;">
+        <li>LLM evaluation patterns and RAG quality metrics</li>
+        <li>Swift and SwiftUI for iOS-native polish on mytai</li>
+      </ul>
+
+      <h2 class="font-semibold mt-12 mb-4" style="font-size: var(--font-size-heading);">Location</h2>
+      <p class="prose" style="font-size: var(--font-size-body); color: var(--color-text);">
+        Based in London.
+      </p>
+
+      <hr class="mt-16 mb-8" style="border-color: var(--color-border);" />
+      <p class="prose" style="color: var(--color-text-muted); font-size: var(--font-size-label);">
+        This is a <a
+          href="https://nownownow.com/about"
+          rel="noopener noreferrer"
+          target="_blank"
+          style="color: var(--color-accent-primary); text-decoration: underline; text-underline-offset: 4px;"
+        >/now page</a>, an idea by Derek Sivers.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
