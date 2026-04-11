@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Completed 06-01-PLAN.md
-last_updated: "2026-04-10T15:52:23.132Z"
-last_activity: 2026-04-10
+status: executing
+stopped_at: Completed quick task 260410-njv
+last_updated: "2026-04-11T17:20:14.031Z"
+last_activity: 2026-04-11
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 11
-  completed_plans: 11
+  total_phases: 8
+  completed_phases: 7
+  total_plans: 16
+  completed_plans: 16
   percent: 100
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-09)
 
 **Core value:** Visitors instantly understand who Dragos is — an AI specialist who builds products — and can explore his work and download his CV.
-**Current focus:** Phase 06 — Layout polish — side-by-side experience and education, timeline dot and bar alignment fixes
+**Current focus:** Phase 07 — Discoverability & Social Presence
 
 ## Current Position
 
-Phase: 06
+Phase: 08
 Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-04-10 - Completed quick task 260410-njv: Fix timeline visual issues
+Status: Executing Phase 07
+Last activity: 2026-04-11
 
 Progress: [#####░░░░░] 50%
 
@@ -36,7 +36,7 @@ Progress: [#####░░░░░] 50%
 
 **Velocity:**
 
-- Total plans completed: 12
+- Total plans completed: 17
 - Average duration: ~2min
 - Total execution time: ~6min
 
@@ -50,6 +50,7 @@ Progress: [#####░░░░░] 50%
 | 04 | 2 | - | - |
 | 05 | 2 | - | - |
 | 06 | 1 | - | - |
+| 07 | 5 | - | - |
 
 **Recent Trend:**
 
@@ -112,6 +113,8 @@ Recent decisions affecting current work:
 ### Roadmap Evolution
 
 - Phase 6 added: Layout polish — side-by-side experience and education, timeline dot and bar alignment fixes
+- Phase 7 added: Discoverability & Social Presence — SEO fundamentals, Cloudflare Web Analytics, /now page, per-page OG images
+- Phase 8 added: Quality Hardening & Polish — a11y audit, Lighthouse CI, E2E smoke test in CI, reduced-motion, print stylesheet, 404 page, view transitions
 
 ### Pending Todos
 

@@ -133,11 +133,11 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Wave 0: install sitemap/satori/resvg/non-variable Inter deps, update astro.config.mjs, type PUBLIC_CF_ANALYTICS_TOKEN, scaffold six phase7 test files
-- [ ] 07-02-PLAN.md — Wave 1: public/robots.txt + Head.astro extended Person JSON-LD + ogImageSlug prop + og:image:alt meta
-- [ ] 07-03-PLAN.md — Wave 1: /now page + BaseLayout nav Now link + hash-only scroll guard + active-route setter + CF Web Analytics beacon (PROD-guarded)
-- [ ] 07-04-PLAN.md — Wave 1: src/lib/og-image.ts (Satori+resvg helper) + src/pages/og/[slug].png.ts endpoint with compile-time slug allowlist (T-7-06)
-- [ ] 07-05-PLAN.md — Wave 2: wire index.astro ogImageSlug="home", full build+vitest+playwright gate, user visual verification checkpoint
+- [x] 07-01-PLAN.md — Wave 0: install sitemap/satori/resvg/non-variable Inter deps, update astro.config.mjs, type PUBLIC_CF_ANALYTICS_TOKEN, scaffold six phase7 test files
+- [x] 07-02-PLAN.md — Wave 1: public/robots.txt + Head.astro extended Person JSON-LD + ogImageSlug prop + og:image:alt meta
+- [x] 07-03-PLAN.md — Wave 1: /now page + BaseLayout nav Now link + hash-only scroll guard + active-route setter + CF Web Analytics beacon (PROD-guarded)
+- [x] 07-04-PLAN.md — Wave 1: src/lib/og-image.ts (Satori+resvg helper) + src/pages/og/[slug].png.ts endpoint with compile-time slug allowlist (T-7-06)
+- [x] 07-05-PLAN.md — Wave 2: wire index.astro ogImageSlug="home", full build+vitest+playwright gate, user visual verification checkpoint
 
 ### Phase 8: Quality Hardening & Polish — raise the site to a 100/100/100/100 production standard with CI guardrails. Scope: (1) Accessibility audit and fixes using axe-core or Pa11y: keyboard navigation, visible focus rings, colour contrast on theme toggle, alt text on profile photo and project icons. (2) Performance budget with Lighthouse CI targeting 100/100/100/100 across Performance, Accessibility, Best Practices, SEO — budget file committed to repo. (3) E2E smoke test in CI: Playwright test that loads /, triggers CV download, toggles theme, scrolls to contact section — wired to GitHub Actions on push/PR. (4) prefers-reduced-motion support on hero entrance animation and any Motion islands — honour user setting. (5) @media print stylesheet: hide nav and theme toggle, black text, show URLs — clean recruiter printouts. (6) Custom branded 404 page matching site design instead of Astro default. (7) Astro 5 <ViewTransitions /> for smooth cross-page navigation once additional routes exist. Goal: site is measurably high-quality, accessible, and regression-proof via CI.
 
