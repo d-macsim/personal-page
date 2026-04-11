@@ -15,6 +15,12 @@ interface Props {
 
 const { title, description, ogImageSlug, ogImageAlt } = Astro.props;
 const cfAnalyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
+
+// Hash links smooth-scroll on the homepage, but need a "/" prefix on other routes
+// so the browser navigates back to the homepage and lands on the anchor.
+// Example: on /now, href="/#about" takes you home and scrolls to #about.
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "";
+const hashPrefix = isHome ? "" : "/";
 ---
 
 <!doctype html>
@@ -30,10 +36,10 @@ const cfAnalyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
 
         <!-- Center-right: desktop nav links (hidden on mobile) -->
         <div class="hidden md:flex items-center gap-6">
-          <a href="#about" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">About</a>
-          <a href="#experience" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
-          <a href="#projects" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
-          <a href="#contact" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
+          <a href={`${hashPrefix}#about`} data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">About</a>
+          <a href={`${hashPrefix}#experience`} data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
+          <a href={`${hashPrefix}#projects`} data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
+          <a href={`${hashPrefix}#contact`} data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
           <a href="/now" data-nav-link class="nav-link text-sm font-medium transition-colors duration-200" style="color: var(--color-text-muted);">Now</a>
         </div>
 
@@ -62,10 +68,10 @@ const cfAnalyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
       <!-- Mobile dropdown menu (hidden by default) per D-07 -->
       <div id="mobile-menu" class="hidden md:hidden border-t border-border" style="background-color: var(--color-base);">
         <div class="max-w-[1100px] mx-auto px-4 py-2">
-          <a href="#about" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">About</a>
-          <a href="#experience" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
-          <a href="#projects" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
-          <a href="#contact" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
+          <a href={`${hashPrefix}#about`} data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">About</a>
+          <a href={`${hashPrefix}#experience`} data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Experience</a>
+          <a href={`${hashPrefix}#projects`} data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Projects</a>
+          <a href={`${hashPrefix}#contact`} data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Contact</a>
           <a href="/now" data-nav-link class="mobile-nav-link block py-3 px-4 text-sm font-medium rounded-lg transition-colors duration-200" style="color: var(--color-text-muted);">Now</a>
         </div>
       </div>
