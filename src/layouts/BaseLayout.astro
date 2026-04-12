@@ -3,6 +3,7 @@ import "@fontsource-variable/inter";
 import "../styles/global.css";
 import Head from "../components/Head.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -27,9 +28,10 @@ const hashPrefix = isHome ? "" : "/";
 <html lang="en" class="dark">
   <head>
     <Head title={title} description={description} ogImageSlug={ogImageSlug} ogImageAlt={ogImageAlt} />
+    <ClientRouter />
   </head>
   <body class="bg-base text-text min-h-dvh transition-colors duration-300 ease-in-out">
-    <nav aria-label="Main navigation" class="fixed top-0 right-0 left-0 z-50 bg-base/80 backdrop-blur-sm border-b border-border transition-colors duration-300 ease-in-out">
+    <nav aria-label="Main navigation" transition:persist class="fixed top-0 right-0 left-0 z-50 bg-base/80 backdrop-blur-sm border-b border-border transition-colors duration-300 ease-in-out">
       <div class="max-w-[1100px] mx-auto px-4 md:px-8 lg:px-12 flex items-center justify-between h-14">
         <!-- Left: empty spacer for layout balance -->
         <div class="hidden md:block"></div>
@@ -81,75 +83,80 @@ const hashPrefix = isHome ? "" : "/";
     </main>
 
     <script>
-      // Hamburger menu toggle
-      const hamburgerBtn = document.getElementById('hamburger-btn');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const hamburgerIcon = document.getElementById('hamburger-icon');
-      const closeIcon = document.getElementById('close-icon');
+      function setupNavObserver() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('[data-nav-link]');
 
-      hamburgerBtn?.addEventListener('click', () => {
-        const isOpen = !mobileMenu?.classList.contains('hidden');
-        mobileMenu?.classList.toggle('hidden', isOpen);
-        hamburgerIcon?.classList.toggle('hidden', !isOpen);
-        closeIcon?.classList.toggle('hidden', isOpen);
-        hamburgerBtn.setAttribute('aria-expanded', String(!isOpen));
-      });
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                navLinks.forEach((navLink) => {
+                  const href = navLink.getAttribute('href');
+                  if (href === `#${entry.target.id}`) {
+                    navLink.setAttribute('data-active', 'true');
+                  } else {
+                    navLink.removeAttribute('data-active');
+                  }
+                });
+              }
+            });
+          },
+          { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        );
 
-      // Close mobile menu when a link is clicked
-      const mobileLinks = document.querySelectorAll('#mobile-menu a');
-      mobileLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileMenu?.classList.add('hidden');
-          hamburgerIcon?.classList.remove('hidden');
-          closeIcon?.classList.add('hidden');
-          hamburgerBtn?.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      // Smooth scroll for hash anchors only — real routes (e.g. /now) navigate normally.
-      // Without this guard, the handler would preventDefault() on /now clicks and the page would not load.
-      const allNavLinks = document.querySelectorAll('[data-nav-link]');
-      allNavLinks.forEach((link) => {
-        link.addEventListener('click', (e) => {
-          const href = link.getAttribute('href');
-          if (!href || !href.startsWith('#')) return; // let real pages navigate normally
-          e.preventDefault();
-          const target = document.querySelector(href);
-          target?.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
-
-      // Mark the /now link active when we're on the /now route.
-      // Runs once at script load; the IntersectionObserver below only touches section[id] anchors,
-      // so it will not overwrite this data-active attribute.
-      if (window.location.pathname === '/now' || window.location.pathname === '/now/') {
-        const nowLinks = document.querySelectorAll('[data-nav-link][href="/now"]');
-        nowLinks.forEach((link) => link.setAttribute('data-active', 'true'));
+        sections.forEach((section) => observer.observe(section));
       }
 
-      // Intersection Observer for active section highlighting (per D-08)
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('[data-nav-link]');
+      function initPage() {
+        // Hamburger menu toggle
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              navLinks.forEach((navLink) => {
-                const href = navLink.getAttribute('href');
-                if (href === `#${entry.target.id}`) {
-                  navLink.setAttribute('data-active', 'true');
-                } else {
-                  navLink.removeAttribute('data-active');
-                }
-              });
-            }
+        hamburgerBtn?.addEventListener('click', () => {
+          const isOpen = !mobileMenu?.classList.contains('hidden');
+          mobileMenu?.classList.toggle('hidden', isOpen);
+          hamburgerIcon?.classList.toggle('hidden', !isOpen);
+          closeIcon?.classList.toggle('hidden', isOpen);
+          hamburgerBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu?.classList.add('hidden');
+            hamburgerIcon?.classList.remove('hidden');
+            closeIcon?.classList.add('hidden');
+            hamburgerBtn?.setAttribute('aria-expanded', 'false');
           });
-        },
-        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
-      );
+        });
 
-      sections.forEach((section) => observer.observe(section));
+        // Smooth scroll for hash anchors only
+        const allNavLinks = document.querySelectorAll('[data-nav-link]');
+        allNavLinks.forEach((link) => {
+          link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            target?.scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+
+        // Mark /now link active on /now route
+        if (window.location.pathname === '/now' || window.location.pathname === '/now/') {
+          const nowLinks = document.querySelectorAll('[data-nav-link][href="/now"]');
+          nowLinks.forEach((link) => link.setAttribute('data-active', 'true'));
+        }
+
+        setupNavObserver();
+      }
+
+      // astro:page-load fires on initial load AND after each ClientRouter navigation
+      document.addEventListener("astro:page-load", initPage);
     </script>
 
     {import.meta.env.PROD && cfAnalyticsToken && (
