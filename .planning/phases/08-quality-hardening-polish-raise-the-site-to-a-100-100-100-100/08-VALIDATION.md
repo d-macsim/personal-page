@@ -2,8 +2,8 @@
 phase: 08
 slug: quality-hardening-polish
 status: draft
-nyquist_compliant: false
-wave_0_complete: false
+nyquist_compliant: true
+wave_0_complete: true
 created: 2026-04-12
 ---
 
@@ -38,11 +38,12 @@ created: 2026-04-12
 
 | Task ID | Plan | Wave | Requirement | Test Type | Automated Command | Status |
 |---------|------|------|-------------|-----------|-------------------|--------|
-| 08-01-01 | 01 | 0 | INFRA | unit | `npx vitest run` | ⬜ pending |
-| 08-02-01 | 02 | 1 | A11Y | unit | `npx vitest run` | ⬜ pending |
-| 08-03-01 | 03 | 1 | PRINT | unit | `npx vitest run` | ⬜ pending |
-| 08-04-01 | 04 | 1 | 404/VT | unit | `npx vitest run` | ⬜ pending |
-| 08-05-01 | 05 | 2 | CI | e2e | `npx playwright test` | ⬜ pending |
+| 08-01-T1 | 01 | 1 | QH-01,QH-02,QH-05 | build+grep | `grep -q "lhci/cli" package.json && grep -q "media print" src/styles/global.css && test -f src/pages/404.astro` | ⬜ pending |
+| 08-01-T2 | 01 | 1 | QH-03,QH-04 | build | `grep -q "ClientRouter" src/layouts/BaseLayout.astro && npm run build` | ⬜ pending |
+| 08-02-T1 | 02 | 1 | QH-06 | config | `test -f playwright.config.ts && grep -q "phase8-smoke" playwright.config.ts` | ⬜ pending |
+| 08-02-T2 | 02 | 1 | QH-07 | e2e | `npx playwright test` | ⬜ pending |
+| 08-03-T1 | 03 | 2 | QH-08 | config | `test -f lighthouserc.json && test -f .github/workflows/ci.yml` | ⬜ pending |
+| 08-03-T2 | 03 | 2 | QH-08 | checkpoint | Human visual verification of 404, print, view transitions | ⬜ pending |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 

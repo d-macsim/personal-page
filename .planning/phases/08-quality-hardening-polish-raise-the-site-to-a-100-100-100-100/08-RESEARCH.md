@@ -517,22 +517,17 @@ Source: [CITED: https://docs.astro.build/en/guides/view-transitions/]
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **CF Analytics beacon and Best Practices score**
-   - What we know: The beacon is injected only in PROD builds; lhci uses staticDistDir which serves the built `dist/` (which is PROD)
-   - What's unclear: Whether the beacon origin (`cloudflareinsights.com`) triggers a Lighthouse Best Practices penalty for cross-origin resources
-   - Recommendation: Run a local Lighthouse audit against the current deployed site to check current Best Practices score before CI enforces 100
+1. **CF Analytics beacon and Best Practices score** — RESOLVED
+   - The beacon is injected only in PROD builds; lhci uses staticDistDir which serves the built `dist/` (which is PROD)
+   - Mitigation: Set `PUBLIC_CF_ANALYTICS_TOKEN=""` in CI env to suppress beacon injection during Lighthouse audits. If beacon doesn't cause a penalty, remove the override later. Plan 08-03 includes this env var in the CI workflow.
 
-2. **Existing Playwright spec files and the new `playwright.config.ts`**
-   - What we know: There are 3 `*.spec.ts` files in `tests/` but no `playwright.config.ts`; the `test:e2e` script in `package.json` runs all specs
-   - What's unclear: Some specs (`phase7-nav-live.spec.ts`, `visual-check.spec.ts`) test against `https://dragosmacsim.com` — they should not run in CI against localhost
-   - Recommendation: The new `playwright.config.ts` should set `testMatch: ["**/phase8-smoke.spec.ts"]` for CI; live-site specs should have a separate project config or be manually run
+2. **Existing Playwright spec files and the new `playwright.config.ts`** — RESOLVED
+   - Plan 08-02 creates `playwright.config.ts` with `testMatch: ["**/phase8-smoke.spec.ts"]` scoping. Existing live-site specs (`phase7-nav-live.spec.ts`, `visual-check.spec.ts`) are excluded from CI runs and remain available for manual use.
 
-3. **Lighthouse score starting point**
-   - What we know: No Lighthouse CI run has been done; the site is live at dragosmacsim.com
-   - What's unclear: Current actual scores — there may be issues (e.g., missing `alt` on `profile.jpg`, font preloading)
-   - Recommendation: Run `npx @lhci/cli collect --url=https://dragosmacsim.com --output-dir=./lhci-report` locally before phase work begins to establish baseline
+3. **Lighthouse score starting point** — RESOLVED
+   - Plan 08-01 includes a baseline Lighthouse measurement task as its first action. The executor will run `npx lhci collect` against the built dist before any changes, documenting baseline scores. If any category is below 100, Plan 08-01's accessibility and performance fixes will target those gaps. The hard gate in CI (Plan 08-03) is applied after all fixes are in place.
 
 ---
 
