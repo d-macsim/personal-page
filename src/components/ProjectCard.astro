@@ -17,7 +17,6 @@ const { project } = Astro.props;
     {project.id === "mytai" ? (
       <div
         class="w-full max-w-[160px] mx-auto md:mx-0 md:flex-shrink-0 md:w-[160px] flex items-center justify-center"
-        aria-label="mytai app icon"
       >
         <img
           src="/mytai-icon.png"
@@ -32,6 +31,7 @@ const { project } = Astro.props;
       <div
         class="w-full max-w-[160px] mx-auto md:mx-0 md:flex-shrink-0 md:w-[160px] h-[160px] rounded-2xl overflow-hidden relative flex items-center justify-center"
         style="border: 2px solid var(--color-border); background: var(--color-surface);"
+        role="img"
         aria-label={`${project.title} preview`}
       >
         <div
