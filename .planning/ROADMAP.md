@@ -139,14 +139,12 @@ Plans:
 - [x] 07-04-PLAN.md — Wave 1: src/lib/og-image.ts (Satori+resvg helper) + src/pages/og/[slug].png.ts endpoint with compile-time slug allowlist (T-7-06)
 - [x] 07-05-PLAN.md — Wave 2: wire index.astro ogImageSlug="home", full build+vitest+playwright gate, user visual verification checkpoint
 
-### Phase 8: Quality Hardening & Polish — raise the site to a 100/100/100/100 production standard with CI guardrails
+### Phase 8: Quality Hardening & Polish — raise the site to a 100/100/100/100 production standard with CI guardrails. Scope: (1) Accessibility audit and fixes using axe-core or Pa11y: keyboard navigation, visible focus rings, colour contrast on theme toggle, alt text on profile photo and project icons. (2) Performance budget with Lighthouse CI targeting 100/100/100/100 across Performance, Accessibility, Best Practices, SEO — budget file committed to repo. (3) E2E smoke test in CI: Playwright test that loads /, triggers CV download, toggles theme, scrolls to contact section — wired to GitHub Actions on push/PR. (4) prefers-reduced-motion support on hero entrance animation and any Motion islands — honour user setting. (5) @media print stylesheet: hide nav and theme toggle, black text, show URLs — clean recruiter printouts. (6) Custom branded 404 page matching site design instead of Astro default. (7) Astro 5 <ViewTransitions /> for smooth cross-page navigation once additional routes exist. Goal: site is measurably high-quality, accessible, and regression-proof via CI.
 
-**Goal:** Site is measurably high-quality, accessible, and regression-proof via CI. Lighthouse CI enforces 100/100/100/100 on every push/PR. E2E smoke tests with axe-core a11y audit run in GitHub Actions. Print stylesheet produces clean recruiter printouts. Custom 404 page and Astro ViewTransitions provide a polished browsing experience.
-**Requirements**: QH-01, QH-02, QH-03, QH-04, QH-05, QH-06, QH-07, QH-08
+**Goal:** [To be planned]
+**Requirements**: TBD
 **Depends on:** Phase 7
-**Plans:** 3 plans
+**Plans:** 0 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Install devDependencies, create 404 page, add print stylesheet, add ClientRouter view transitions
-- [ ] 08-02-PLAN.md — Create Playwright config and E2E smoke test suite with axe-core a11y audit
-- [ ] 08-03-PLAN.md — Create Lighthouse CI config and GitHub Actions CI workflow with 4 parallel jobs
+- [ ] TBD (run /gsd-plan-phase 8 to break down)

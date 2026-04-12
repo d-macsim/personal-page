@@ -185,3 +185,55 @@
     animation: none;
   }
 }
+
+/* ---- Print Stylesheet (Phase 8) ---- */
+@media print {
+  /* Hide navigation chrome and interactive elements */
+  nav,
+  #theme-toggle,
+  #hamburger-btn,
+  #mobile-menu,
+  .glow-pulse {
+    display: none !important;
+  }
+
+  /* Reset to print-safe colours */
+  html, body {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Override all design token colours for print */
+  :root {
+    --color-base: #ffffff !important;
+    --color-surface: #ffffff !important;
+    --color-border: #cccccc !important;
+    --color-text: #000000 !important;
+    --color-text-muted: #444444 !important;
+    --color-accent-primary: #4f46e5 !important;
+  }
+
+  /* Disable all animations */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Show external link URLs inline (skip hash anchors, mailto, tel) */
+  a[href]:not([href^="#"]):not([href^="mailto:"]):not([href^="tel:"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #444;
+  }
+
+  /* Sensible page breaks */
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure main content fills the page without left/right constraint */
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}
