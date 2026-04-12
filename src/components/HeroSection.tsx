@@ -83,8 +83,8 @@ export default function HeroSection() {
             fontSize: "var(--font-size-label)",
             color: "#ffffff",
             backgroundColor: primaryHover
-              ? "var(--color-accent-primary-hover)"
-              : "var(--color-accent-primary)",
+              ? "var(--color-accent-primary-press)"
+              : "var(--color-accent-primary-solid)",
             minWidth: 160,
             outlineColor: "var(--color-accent-primary)",
           }}

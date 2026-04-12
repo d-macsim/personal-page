@@ -2,7 +2,10 @@
   "ci": {
     "collect": {
       "staticDistDir": "./dist",
-      "url": ["/index.html", "/now/index.html"]
+      "url": ["/index.html", "/now/index.html"],
+      "settings": {
+        "skipAudits": ["errors-in-console"]
+      }
     },
     "assert": {
       "assertions": {

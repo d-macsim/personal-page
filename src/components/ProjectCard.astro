@@ -19,10 +19,11 @@ const { project } = Astro.props;
         class="w-full max-w-[160px] mx-auto md:mx-0 md:flex-shrink-0 md:w-[160px] flex items-center justify-center"
       >
         <img
-          src="/mytai-icon.png"
+          src="/mytai-icon-320.png"
           alt="mytai app icon"
+          width="160"
+          height="160"
           class="rounded-[2rem]"
-          style="width: 160px; height: 160px;"
           loading="lazy"
           decoding="async"
         />
@@ -93,7 +94,7 @@ const { project } = Astro.props;
           target="_blank"
           rel="noopener noreferrer"
           class="project-cta inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 mt-6"
-          style="background-color: var(--color-accent-primary); color: white;"
+          style="background-color: var(--color-accent-primary-solid); color: white;"
           aria-label={`${project.urlLabel} (opens in new tab)`}
         >
           {project.urlLabel}
@@ -120,9 +121,10 @@ const { project } = Astro.props;
 
 <style>
   a.project-cta:hover {
-    background-color: var(--color-accent-primary-hover) !important;
+    background-color: var(--color-accent-primary-press) !important;
   }
   a.project-cta:active {
-    background-color: var(--color-accent-primary-press) !important;
+    background-color: var(--color-accent-primary-solid) !important;
+    filter: brightness(0.85);
   }
 </style>

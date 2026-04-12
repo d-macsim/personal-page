@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroSection from "../components/HeroSection.tsx";
+import HeroSection from "../components/HeroSection.astro";
 import AboutSection from "../components/AboutSection.astro";
 import CVSection from "../components/CVSection.astro";
 import ProjectsSection from "../components/ProjectsSection.astro";
@@ -13,7 +13,7 @@ import ContactSection from "../components/ContactSection.astro";
   ogImageSlug="home"
   ogImageAlt="Dragos Macsim - AI Specialist & Product Builder"
 >
-  <HeroSection client:load />
+  <HeroSection />
   <AboutSection />
   <CVSection />
   <ProjectsSection />

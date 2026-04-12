@@ -58,7 +58,17 @@ blocked: 0
   reason: "User reported: Lighthouse fails assertions. Homepage: Performance 99, Accessibility 96, Best Practices 96. /now: Accessibility 95, Best Practices 96. None hit the required 100."
   severity: major
   test: 6
-  root_cause: ""
-  artifacts: []
-  missing: []
+  root_cause: "Accessibility: likely heading hierarchy issues, missing image dimensions, or ARIA violations. Best Practices: excessive inline styles, missing width/height on images. Performance: hero image not prioritized (loading=lazy instead of eager)."
+  artifacts:
+    - path: "src/pages/now.astro"
+      issue: "Heading hierarchy and inline styles"
+    - path: "src/components/ProjectCard.astro"
+      issue: "Missing width/height attributes on img"
+    - path: "src/components/PhotoPlaceholder.astro"
+      issue: "Profile image loading=lazy instead of eager"
+  missing:
+    - "Fix accessibility violations flagged by Lighthouse"
+    - "Add explicit width/height to all images"
+    - "Prioritize hero image with fetchpriority=high"
+    - "Reduce inline styles"
   debug_session: ""
