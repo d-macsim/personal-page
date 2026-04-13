@@ -148,3 +148,19 @@ Plans:
 
 Plans:
 - [ ] TBD (run /gsd-plan-phase 8 to break down)
+
+### Phase 9: Gap Closure — CV Achievements & Nav Hash Links
+
+**Goal:** Close the two remaining v1.0 audit gaps: render CV achievement bullets that are silently dropped, and fix cross-page nav hash links after ClientRouter navigation from / to /now
+**Requirements**: EXP-01, CONT-02
+**Depends on:** Phase 8
+**Gap Closure:** Closes gaps from v1.0-MILESTONE-AUDIT.md
+**Success Criteria** (what must be TRUE):
+  1. Each experience role in the timeline displays at least two achievement bullets sourced from cv.ts achievements[]
+  2. After ClientRouter navigation from / to /now, clicking a nav hash link (e.g. #about) navigates back to the homepage section correctly
+  3. Direct browser load of /now followed by nav hash click also works
+  4. All existing Lighthouse scores remain at 100/100/100/100
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 9 to break down)

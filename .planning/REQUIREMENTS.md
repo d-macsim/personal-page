@@ -18,7 +18,7 @@
 
 ### Experience
 
-- [x] **EXP-01**: Experience timeline showing roles, companies, dates, and key achievements
+- [ ] **EXP-01**: Experience timeline showing roles, companies, dates, and key achievements
 - [x] **EXP-02**: Education section with degrees, institutions, and relevant details
 - [x] **EXP-03**: Skills displayed as categorized lists (no percentage bars)
 - [x] **EXP-04**: Downloadable CV as PDF with candidate-named filename
@@ -31,7 +31,7 @@
 ### Contact
 
 - [x] **CONT-01**: Contact section with email, LinkedIn, and GitHub links
-- [x] **CONT-02**: Contact reachable from any section (persistent nav or CTA)
+- [ ] **CONT-02**: Contact reachable from any section (persistent nav or CTA)
 
 ### Design System
 
@@ -100,14 +100,14 @@
 | ABOUT-02 | Phase 2 | Pending |
 | SEO-01 | Phase 2 | Pending |
 | SEO-02 | Phase 2 | Pending |
-| EXP-01 | Phase 3 | Complete |
+| EXP-01 | Phase 9 | Pending |
 | EXP-02 | Phase 3 | Complete |
 | EXP-03 | Phase 3 | Complete |
 | EXP-04 | Phase 3 | Complete |
 | PROJ-01 | Phase 4 | Complete |
 | PROJ-02 | Phase 4 | Complete |
 | CONT-01 | Phase 4 | Complete |
-| CONT-02 | Phase 4 | Complete |
+| CONT-02 | Phase 9 | Pending |
 | DSGN-04 | Phase 5 | Complete |
 | DEPLOY-01 | Phase 5 | Complete |
 
