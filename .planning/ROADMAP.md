@@ -160,7 +160,7 @@ Plans:
   2. After ClientRouter navigation from / to /now, clicking a nav hash link (e.g. #about) navigates back to the homepage section correctly
   3. Direct browser load of /now followed by nav hash click also works
   4. All existing Lighthouse scores remain at 100/100/100/100
-**Plans:** 0 plans
+**Plans:** 1 plan
 
 Plans:
-- [ ] TBD (run /gsd-plan-phase 9 to break down)
+- [ ] 09-01-PLAN.md — Wire achievement bullets, fix cross-page nav hash links, extend E2E tests
