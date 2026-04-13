@@ -163,4 +163,4 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 09-01-PLAN.md — Wire achievement bullets, fix cross-page nav hash links, extend E2E tests
+- [x] 09-01-PLAN.md — Wire achievement bullets, fix cross-page nav hash links, extend E2E tests
