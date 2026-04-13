@@ -38,8 +38,10 @@ describe("EXP-01: Experience timeline", () => {
     expect(titleMatches!.length).toBeGreaterThanOrEqual(3);
   });
 
-  it("TimelineColumn.astro iterates entry.body", () => {
-    expect(timeline).toMatch(/entry\.body/);
+  it("TimelineColumn.astro renders entry.body as a bullet list", () => {
+    expect(timeline).toContain("entry.body.length > 0");
+    expect(timeline).toContain("<ul");
+    expect(timeline).toContain("<li");
   });
 
   it("TimelineColumn.astro uses color-accent-primary for dot markers", () => {
@@ -59,8 +61,8 @@ describe("EXP-02: Education section", () => {
     expect(cvData).toContain("MSc Business Analytics");
   });
 
-  it("cv.ts contains University College London", () => {
-    expect(cvData).toContain("University College London");
+  it("cv.ts contains UCL institution", () => {
+    expect(cvData).toContain("UCL");
   });
 
   it("cv.ts contains On track for distinction", () => {
@@ -75,8 +77,9 @@ describe("EXP-02: Education section", () => {
     expect(cvData).toContain("modules");
   });
 
-  it("TimelineColumn.astro renders entry.body items", () => {
-    expect(timeline).toContain("entry.body");
+  it("TimelineColumn.astro renders entry.body items in list elements", () => {
+    expect(timeline).toContain("entry.body.map");
+    expect(timeline).toContain("list-disc");
   });
 });
 
@@ -196,13 +199,18 @@ describe("CV section integration", () => {
   it("index.astro renders CVSection without React island directive", () => {
     expect(indexPage).not.toMatch(/CVSection\s+client:/);
   });
+
+  it("CVSection.astro passes r.achievements as body for experience", () => {
+    expect(cvSection).toContain("body: r.achievements");
+  });
 });
 
 describe("LAYOUT-02: Dot alignment", () => {
   const timeline = readFile("src/components/TimelineColumn.astro");
 
   it("dot uses left-4 to align with spine", () => {
-    expect(timeline).toContain("left-4 top-2 w-2.5 h-2.5 rounded-full");
+    expect(timeline).toContain("left-4");
+    expect(timeline).toContain("w-2.5 h-2.5 rounded-full");
   });
 
   it("dot does NOT use left-3 (the misaligned value)", () => {

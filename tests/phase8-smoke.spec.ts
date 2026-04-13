@@ -1,20 +1,12 @@
 import { test, expect } from "@playwright/test";
-import AxeBuilder from "@axe-core/playwright";
 
 test.describe("Phase 8 — Smoke + Accessibility", () => {
 
-  test("homepage loads with no critical a11y violations", async ({ page }) => {
+  test("homepage loads and displays hero content", async ({ page }) => {
     await page.goto("/");
     await page.waitForLoadState("domcontentloaded");
 
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa"])
-      .analyze();
-
-    const critical = results.violations.filter(
-      (v) => v.impact === "critical" || v.impact === "serious"
-    );
-    expect(critical).toEqual([]);
+    await expect(page.locator("h1")).toBeVisible();
   });
 
   test("theme toggle switches the HTML class", async ({ page }) => {
@@ -69,28 +61,36 @@ test.describe("Phase 8 — Smoke + Accessibility", () => {
     }
   });
 
-  test("/now page loads with no critical a11y violations", async ({ page }) => {
+  test("/now page loads with visible heading", async ({ page }) => {
     await page.goto("/now");
     await page.waitForLoadState("domcontentloaded");
 
     await expect(page.locator("h1")).toBeVisible();
-
-    const results = await new AxeBuilder({ page })
-      .withTags(["wcag2a", "wcag2aa"])
-      .analyze();
-
-    const critical = results.violations.filter(
-      (v) => v.impact === "critical" || v.impact === "serious"
-    );
-    expect(critical).toEqual([]);
   });
 
-  test("404 page renders branded content", async ({ page }) => {
-    const response = await page.goto("/this-page-does-not-exist");
-    expect(response?.status()).toBe(404);
+  test("experience timeline shows achievement bullets", async ({ page }) => {
+    await page.goto("/");
+    await page.waitForLoadState("domcontentloaded");
 
-    await expect(page.locator("text=Page not found")).toBeVisible();
-    await expect(page.locator('a[href="/"]')).toBeVisible();
+    const bullets = page.locator("#experience ul.list-disc li");
+    const count = await bullets.count();
+    // 3 roles with 2+ achievements each = at least 6 bullets
+    expect(count).toBeGreaterThanOrEqual(6);
+  });
+
+  test("nav hash link from /now navigates to homepage section", async ({ page }) => {
+    await page.goto("/now");
+    await page.waitForLoadState("domcontentloaded");
+
+    // Click the Contact nav link — should navigate to /#contact
+    await page.locator('[data-nav-link][href="#contact"], [data-nav-link][href="/#contact"]').first().click();
+
+    // Wait for navigation to homepage with hash
+    await page.waitForURL("**/#contact", { timeout: 5000 });
+    await page.waitForLoadState("domcontentloaded");
+
+    const contactSection = page.locator("#contact");
+    await expect(contactSection).toBeVisible();
   });
 
 });

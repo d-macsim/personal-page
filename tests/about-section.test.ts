@@ -22,8 +22,8 @@ describe("ABOUT-01: Professional bio", () => {
     expect(aboutSection).toContain("<h2");
   });
 
-  it("contains bio paragraph about AI specialist and product builder", () => {
-    expect(aboutSection).toContain("AI specialist and product builder");
+  it("contains bio paragraph about AI specialist", () => {
+    expect(aboutSection).toContain("AI data specialist");
   });
 
   it("contains bio paragraph about Mindrift", () => {
@@ -31,7 +31,7 @@ describe("ABOUT-01: Professional bio", () => {
   });
 
   it("contains bio paragraph about education", () => {
-    expect(aboutSection).toContain("MSc in Statistics from Bayes Business School");
+    expect(aboutSection).toContain("MSc in Business Analytics from Bayes Business School");
   });
 
   it("uses prose class for bio container", () => {
@@ -44,19 +44,19 @@ describe("ABOUT-01: Photo placeholder", () => {
     expect(existsSync(join(ROOT, "src/components/PhotoPlaceholder.astro"))).toBe(true);
   });
 
-  it("contains DM initials text", () => {
+  it("contains profile image element", () => {
     const photo = readFile("src/components/PhotoPlaceholder.astro");
-    expect(photo).toContain("DM");
+    expect(photo).toContain("<img");
   });
 
-  it("has an aria-label attribute", () => {
+  it("has alt text for accessibility", () => {
     const photo = readFile("src/components/PhotoPlaceholder.astro");
-    expect(photo).toContain("aria-label");
+    expect(photo).toContain("alt=");
   });
 
-  it("has 96px dimensions", () => {
+  it("has photo dimensions set", () => {
     const photo = readFile("src/components/PhotoPlaceholder.astro");
-    expect(photo).toContain("96px");
+    expect(photo).toContain("128px");
   });
 });
 
