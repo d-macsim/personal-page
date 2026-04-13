@@ -23,7 +23,7 @@ describe("HERO-01: Hero displays name, title, and positioning statement", () => 
   });
 
   it("contains professional title", () => {
-    expect(heroTsx).toContain("AI Specialist & Product Builder");
+    expect(heroTsx).toContain("AI Data Specialist");
   });
 
   it("contains positioning tagline", () => {
@@ -98,8 +98,7 @@ describe("HERO-02: prefers-reduced-motion support", () => {
 
 describe("HERO-03: Narrative framing", () => {
   it("frames as AI specialist who builds products", () => {
-    expect(heroTsx).toContain("AI Specialist");
-    expect(heroTsx).toContain("Product Builder");
+    expect(heroTsx).toContain("AI Data Specialist");
   });
 });
 

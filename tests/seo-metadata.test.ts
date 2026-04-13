@@ -67,8 +67,8 @@ describe("SEO-01: JSON-LD structured data", () => {
     expect(headAstro).toContain('"Dragos Macsim"');
   });
 
-  it("contains AI Specialist & Product Builder jobTitle", () => {
-    expect(headAstro).toContain('"AI Specialist & Product Builder"');
+  it("contains AI Data Specialist jobTitle", () => {
+    expect(headAstro).toContain('"AI Data Specialist"');
   });
 
   it("contains LinkedIn in sameAs", () => {

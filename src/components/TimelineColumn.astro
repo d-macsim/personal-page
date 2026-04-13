@@ -50,6 +50,14 @@ const { title, entries } = Astro.props;
               {" "}&middot; {entry.subheading}
             </span>
           </h3>
+
+          {entry.body.length > 0 && (
+            <ul class="mt-2 space-y-1 list-disc list-inside" style="color: var(--color-text-muted);">
+              {entry.body.map((item) => (
+                <li style="font-size: var(--font-size-body);">{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
       ))
     }
